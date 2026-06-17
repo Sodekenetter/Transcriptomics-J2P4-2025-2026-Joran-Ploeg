@@ -1,0 +1,14 @@
+"category","over_represented_pvalue","under_represented_pvalue","numDEInCat","numInCat","term","ontology","padj_BF"
+"GO:0019814",1.19741642360778e-29,1,82,167,"immunoglobulin complex","CC",2.53457134385058e-25
+"GO:0002250",2.10229273395132e-21,1,195,717,"adaptive immune response","BP",4.44992302995477e-17
+"GO:0003823",8.45728068767509e-17,1,72,166,"antigen binding","MF",1.79015260316019e-12
+"GO:0006955",1.44364142458935e-12,1,421,2004,"immune response","BP",3.05575580342827e-08
+"GO:0016064",2.74829994633511e-12,1,64,158,"immunoglobulin mediated immune response","BP",5.81732649640754e-08
+"GO:0019724",7.56791305385603e-12,1,64,163,"B cell mediated immunity","BP",1.6019001561097e-07
+"GO:0002376",7.89057496548745e-12,1,542,2637,"immune system process","BP",1.67019800294473e-07
+"GO:0002449",2.08660072726377e-11,1,100,322,"lymphocyte mediated immunity","BP",4.41670775939921e-07
+"GO:0002443",1.134652631618e-09,1,114,407,"leukocyte mediated immunity","BP",2.40171922534582e-05
+"GO:0002460",1.54102665028786e-09,1,105,358,"adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains","BP",3.26189111066431e-05
+"GO:0002252",9.53283344723237e-09,1,153,607,"immune effector process","BP",0.000201781485577568
+"GO:0001227",8.73967959139534e-08,1,81,296,"DNA-binding transcription repressor activity, RNA polymerase II-specific","MF",0.00184992797911065
+"GO:0001217",1.11046994309966e-07,1,83,306,"DNA-binding transcription repressor activity","MF",0.00235053172855904
