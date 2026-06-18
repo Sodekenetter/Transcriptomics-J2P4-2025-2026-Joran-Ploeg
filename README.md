@@ -64,35 +64,3 @@ Binnen de IL-17 signaling pathway werd een duidelijke opregulatie gevonden van m
 
 De resultaten sluiten aan bij de huidige kennis over de rol van IL-17 in reumatoïde artritis en ondersteunen het idee dat deze pathway een belangrijk therapeutisch aangrijpingspunt vormt. Toekomstig onderzoek zou kunnen onderzoeken welke van de geïdentificeerde chemokines het sterkst bijdragen aan ziekteprogressie en of deze gebruikt kunnen worden als biomarker voor ziekteactiviteit of behandelingsrespons.
 
-
-
-### **Competentie beheren**
-
-#### **Beheer van onderzoeksgegevens**
-
-Tijdens dit project werd gewerkt volgens de principes van reproduceerbaar en transparant onderzoek. De ruwe sequencingdata, tussentijdse resultaten en eindresultaten werden opgeslagen in een gestructureerde mappenstructuur. Voor iedere analysetap werden afzonderlijke outputbestanden gegenereerd, waaronder countmatrices, differentiële genexpressieresultaten, GO-analyseresultaten en KEGG-pathwayresultaten.
-
-
-
-Door tussentijdse resultaten als CSV-bestanden op te slaan kunnen analyses eenvoudig worden gecontroleerd en opnieuw worden uitgevoerd zonder eerdere stappen volledig te herhalen. Bestandsnamen zijn beschrijvend gekozen zodat direct duidelijk is welke gegevens zij bevatten.
-
-
-
-Alle scripts werden opgeslagen als tekstbestanden waardoor de volledige analyse reproduceerbaar blijft voor andere onderzoekers.
-
-
-
-#### **Toepassing GitHub**
-
-GitHub werd gebruikt als versiebeheersysteem voor het beheren van scripts, resultaten en documentatie. Door middel van commits werd iedere belangrijke wijziging vastgelegd. Hierdoor bleef inzichtelijk welke veranderingen zijn doorgevoerd en wanneer deze zijn uitgevoerd.
-
-
-
-De repository is georganiseerd in afzonderlijke mappen voor data, scripts, resultaten, figuren en documentatie. Deze structuur zorgt ervoor dat bestanden eenvoudig teruggevonden kunnen worden en voorkomt verwarring tussen ruwe data en afgeleide resultaten.
-
-
-
-GitHub faciliteert daarnaast samenwerking, transparantie en reproduceerbaarheid. Andere onderzoekers kunnen de repository downloaden, de gebruikte scripts bekijken en de analyse opnieuw uitvoeren. Hiermee sluit het project aan bij de FAIR-principes (Findable, Accessible, Interoperable en Reusable) voor onderzoeksgegevens.
-
-
-
