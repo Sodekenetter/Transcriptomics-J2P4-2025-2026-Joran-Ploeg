@@ -58,7 +58,7 @@ Deze transcriptomicsanalyse laat zien dat het synovium van patiënten met reumat
 
 
 
-Binnen de IL-17 signaling pathway werd een duidelijke opregulatie gevonden van meerdere chemokines, waaronder CXCL1, CXCL2, CXCL5, CXCL8, CXCL10 en CCL7. Deze moleculen spelen een belangrijke rol bij het aantrekken van neutrofielen, monocyten en andere immuuncellen naar ontstoken gewrichten. Hierdoor kunnen zij bijdragen aan het in stand houden van chronische ontsteking en gewrichtsschade.
+Binnen de IL-17 signaling pathway werd een duidelijke opregulatie gevonden van meerdere chemokines, waaronder CXCL1, CXCL2, CXCL5, CXCL8 en CCL7. Deze moleculen spelen een belangrijke rol bij het aantrekken van neutrofielen, monocyten en andere immuuncellen naar ontstoken gewrichten. Hierdoor kunnen zij bijdragen aan het in stand houden van chronische ontsteking en gewrichtsschade.
 
 
 
