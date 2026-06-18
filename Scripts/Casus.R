@@ -1,4 +1,4 @@
-#Werkplek
+  #Werkplek
 setwd("C:/Users/joran/Documents/Ik/School/NHL/BML/Jaar 3/Periode 4 J2/Transcriptomics/Casus/R data file")
 getwd()
 
@@ -15,6 +15,8 @@ getwd()
 #BiocManager::install("geneLenDataBase")
 #BiocManager::install("org.Hs.eg.db")
 #BiocManager::install("clusterProfiler")
+#BiocManager::install("AnnotationDbi")
+#install.packages("ggplot2")
 library(Rsubread)
 library(Rsamtools)
 library(DESeq2)
@@ -24,7 +26,23 @@ library(pathview)
 library(goseq)
 library(geneLenDataBase)
 library(org.Hs.eg.db)
+library(AnnotationDbi)
 library(clusterProfiler)
+library(ggplot2)
+
+packageVersion("Rsubread")
+packageVersion("Rsamtools")
+packageVersion("DESeq2")
+packageVersion("KEGGREST")
+packageVersion("EnhancedVolcano")
+packageVersion("pathview")
+packageVersion("goseq")
+packageVersion("geneLenDataBase")
+packageVersion("org.Hs.eg.db")
+packageVersion("clusterProfiler")
+packageVersion("AnnotationDbi")
+packageVersion("ggplot2")
+
 
   #Indexeren
 #buildindex(
@@ -86,15 +104,18 @@ head(treatment_table, 8)
 colnames(countsRA) <- c('control1', 'control2', 'control3', 'control4', 'reuma1', 'reuma2', 'reuma3', 'reuma4')
 head(countsRA, 8)
 
+write.csv(treatment_table, "01_metadata.csv", row.names = TRUE)
 
   #Statestiek
-#dds <- DESeqDataSetFromMatrix(countData = countsRA, colData = treatment_table, design = ~ treatment)
-#dds <- DESeq(dds)
-#resultaten <- results(dds)
+dds <- DESeqDataSetFromMatrix(countData = countsRA, colData = treatment_table, design = ~ treatment)
+dds <- DESeq(dds)
+resultaten <- results(dds)
 head(resultaten)
 
 resultatenRA <- as.data.frame(resultaten)
 head(resultatenRA)
+
+write.csv(resultatenRA, "02_DESeq2_results.csv", row.names = TRUE)
 
 sum(resultatenRA$padj < 0.05 & resultatenRA$log2FoldChange > 1, na.rm = TRUE)
 sum(resultatenRA$padj < 0.05 & resultatenRA$log2FoldChange < -1, na.rm = TRUE)
@@ -109,9 +130,9 @@ head(laagste_p_waarde)
 
 
   #Vulcanoplot
-#EnhancedVolcano(resultatenRA, lab = rownames(resultatenRA), x = 'log2FoldChange', y = 'padj')
-#dev.copy(png, 'VolcanoplotWC.png', width = 8, height = 10, units = 'in', res = 500)
-#dev.off()
+EnhancedVolcano(resultatenRA, lab = rownames(resultatenRA), x = 'log2FoldChange', y = 'padj')
+dev.copy(png, '03_VolcanoplotRA.png', width = 8, height = 10, units = 'in', res = 500)
+dev.off()
 
 
   #Go-analyse
@@ -120,24 +141,45 @@ keep <- rowSums(countsRA) > 0
 countsRA_filt <- countsRA[keep, ]
 resultatenRA_filt <- resultatenRA[keep, ]
 
-significante_genen <- as.integer(!is.na(resultatenRA_filt$padj) & !is.na(resultatenRA_filt$log2FoldChange) & resultatenRA_filt$padj < 0.05 & abs(resultatenRA_filt$log2FoldChange) > 1)
+DE_genen <- resultatenRA[resultatenRA$padj < 0.05 & abs(resultatenRA$log2FoldChange) > 1,]
+head(DE_genen)
+
+write.csv(DE_genen, "04_significante_genen.csv", row.names = TRUE)
+
+significante_genen <- as.integer(!is.na(resultatenRA_filt$padj) &
+                                   !is.na(resultatenRA_filt$log2FoldChange) &
+                                   resultatenRA_filt$padj < 0.01 & abs(resultatenRA_filt$log2FoldChange) > 1)
 
 names(significante_genen) <- rownames(resultatenRA_filt)
 
 pwf <- nullp(significante_genen, bias.data = rowSums(countsRA_filt), plot.fit = FALSE)
 
-#GO.wall <- goseq(pwf, genome = "hg38", id = "geneSymbol")
+GO.wall <- goseq(pwf, genome = "hg38", id = "geneSymbol")
 
-GO.wall$padj_BH <- p.adjust(GO.wall$over_represented_pvalue, method = "BH")
+GO.wall$padj_BF <- p.adjust(GO.wall$over_represented_pvalue, method = "bonferroni")
 
-significante_GO <- GO.wall[GO.wall$padj_BH < 0.01 & GO.wall$numDEInCat >= 15,]
+significante_GO <- GO.wall[GO.wall$padj_BF <= 0.01 & GO.wall$numDEInCat >= 15 ,]
 
-significante_GO <- significante_GO[order(significante_GO$padj_BH),]
+significante_GO <- significante_GO[order(significante_GO$padj_BF),]
+head(significante_GO, 10)
 
-write.csv(significante_GO, "GO_analyse_resultaat.csv", row.names = FALSE)
-GO_analyse_resultaat <- read.csv("GO_analyse_resultaat.csv")
-head(GO_analyse_resultaat, 20)
+top10_GO <- head(significante_GO, 10)
+top10_GO$logFDR <- -log10(top10_GO$padj_BF)
 
+write.csv(top10_GO, "05_top10_GO.csv", row.names = FALSE)
+
+ggplot(top10_GO,aes(x = reorder(term, logFDR), y = logFDR, fill = ontology)) +
+  geom_col() +
+  coord_flip() +
+  labs(title = "Top 10 verrijkte GO-termen", x = "", y = "-log10(FDR)", fill = "ontology") +
+  theme_bw() +
+  theme(axis.text.y = element_text(size = 9))
+dev.copy(png, '06_Top 10 verrijkte GO-termen.png', width = 20, height = 10, units = 'in', res = 1000)
+dev.off()
+
+write.csv(significante_GO, "07_GO_results.csv", row.names = FALSE)
+GO_analyse_resultaat <- read.csv("07_GO_results.csv")
+head(GO_analyse_resultaat, 10)
 
   #Pathway-analyse
 significante_genen <- rownames(resultatenRA[resultatenRA$padj < 0.05 & abs(resultatenRA$log2FoldChange) > 1,])
@@ -148,7 +190,10 @@ entrez <- na.omit(entrez)
 head(entrez)
 
 kegg <- enrichKEGG(gene = entrez, organism = "hsa", pvalueCutoff = 0.05)
-head(as.data.frame(kegg))
+kegg_df <- (as.data.frame(kegg))
+head(kegg_df)
+
+write.csv(kegg_df, "08_KEGG_results.csv", row.names = FALSE)
 
 fc <- resultatenRA$log2FoldChange
 names(fc) <- rownames(resultatenRA)
@@ -160,7 +205,5 @@ names(gene.data) <- fc_entrez
 
 gene.data <- gene.data[!is.na(names(gene.data))]
 
-pathview(gene.data = gene.data, pathway.id = "05323", species = "hsa", gene.idtype = "KEGG", limit = list(gene = 10)) # RA pathway
-pathview(gene.data = gene.data, pathway.id = "04657", species = "hsa", gene.idtype = "KEGG", limit = list(gene = 10)) # IL-17
-pathview(gene.data = gene.data, pathway.id = "04668", species = "hsa", gene.idtype = "KEGG", limit = list(gene = 10)) # TNF
-pathview(gene.data = gene.data, pathway.id = "04064", species = "hsa", gene.idtype = "KEGG", limit = list(gene = 10)) # NF-kappa B
+pathview(gene.data = gene.data, pathway.id = "04657", species = "hsa", gene.idtype = "KEGG", limit = list(gene = 15)) # IL-17
+
