@@ -44,7 +44,7 @@ De GO-analyse toonde een sterke verrijking van immuun-gerelateerde processen. De
 
 
 
-De KEGG-analyse identificeerde meerdere ontstekingsgerelateerde pathways, waaronder de IL-17 signaling pathway. Binnen deze pathway waren verschillende chemokines verhoogd tot expressie gebracht, waaronder CXCL1, CXCL2, CXCL5, CXCL8, CXCL10 en CCL7. Deze genen vormen een belangrijk onderdeel van de ontstekingscascade doordat zij immuuncellen aantrekken naar ontstoken weefsels.
+De KEGG-analyse identificeerde meerdere ontstekingsgerelateerde pathways, waaronder de IL-17 signaling pathway. Binnen deze pathway waren verschillende chemokines verhoogd tot expressie gebracht, waaronder CXCL1, CXCL2, CXCL5, CXCL8 en CCL7. Deze genen vormen een belangrijk onderdeel van de ontstekingscascade doordat zij immuuncellen aantrekken naar ontstoken weefsels.
 
 
 
