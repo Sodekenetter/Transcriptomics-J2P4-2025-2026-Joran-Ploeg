@@ -1,66 +1,274 @@
-# Transcriptomics-J2P4-2025-2026-Joran-Ploeg
+# 🧬 Transcriptomics-J2P4-2025-2026-Joran-Ploeg
 
+# 📖 Inleiding
 
+# 
 
-### **Inleiding**
+# Reumatoïde artritis (RA) is een chronische auto-immuunziekte die wordt gekenmerkt door ontsteking van het synoviale membraan van gewrichten. Deze ontsteking kan leiden tot kraakbeen- en botafbraak en uiteindelijk tot blijvende gewrichtsschade. Transcriptomics maakt het mogelijk om verschillen in genexpressie tussen gezonde en zieke weefsels te onderzoeken en betrokken biologische processen en signaalroutes te identificeren.
 
-Reumatoïde artritis (RA) is een chronische auto-immuunziekte die wordt gekenmerkt door ontsteking van het synoviale membraan van gewrichten. Deze ontsteking leidt uiteindelijk tot kraakbeen- en botafbraak, wat kan resulteren in blijvende gewrichtsschade. Hoewel de exacte oorzaak van RA nog niet volledig bekend is, spelen genetische factoren, omgevingsfactoren en ontregeling van het immuunsysteem een belangrijke rol.
+# 
 
+# In deze casus werden RNA-sequencinggegevens van synoviumbiopten van vier gezonde controles en vier patiënten met vastgestelde RA geanalyseerd. De gebruikte invoerbestanden zijn opgenomen in de map Data (count\_matrix\_RA.txt en metadata.csv). Het doel van de analyse was het identificeren van differentieel tot expressie komende genen, gevolgd door GO- en KEGG-verrijkingsanalyses.
 
+# 
 
-Transcriptomics maakt het mogelijk om verschillen in genexpressie tussen gezonde en zieke weefsels te onderzoeken. Hierdoor kunnen biologische processen en signaalroutes worden geïdentificeerd die bijdragen aan ziekteontwikkeling. In deze casus werden RNA-sequencinggegevens van synoviumbiopten van vier gezonde controles en vier patiënten met vastgestelde RA geanalyseerd.
+# 🎯 Speciale aandacht werd besteed aan de IL-17-signaleringsroute vanwege de bekende rol van IL-17 bij ontstekingsprocessen in RA.
 
+# 
 
+# 📚 Achtergrondinformatie over RA en IL-17 is opgenomen in:
 
-Het doel van dit onderzoek was het identificeren van differentieel tot expressie komende genen tussen RA-patiënten en controles. Daarnaast werden Gene Ontology (GO)- en KEGG-pathway-analyses uitgevoerd om biologische processen en signaalroutes te identificeren die betrokken zijn bij de ziekte. Speciale aandacht werd besteed aan de IL-17 signaling pathway, omdat deze pathway een centrale rol speelt bij ontstekingsprocessen en de recrutering van immuuncellen naar ontstoken gewrichten.
+# 
 
+# referenties/Smolen\_2016\_Rheumatoid\_Arthritis.pdf
 
+# referenties/Lubberts\_2015\_IL17\_RA.pdf
 
-### **Methode**
+# ⚙️ Methode
 
-RNA-sequencingdata van vier controlepersonen en vier patiënten met reumatoïde artritis werden geanalyseerd in R. De ruwe sequencingreads werden verwerkt met Rsamtools (v2.28.0) en gemapt tegen het humane referentiegenoom GRCh38.p14 (NCBI Assembly GCF\_000001405.40) met behulp van Rsubread (v2.26.0). Vervolgens werd een countmatrix gegenereerd waarin het aantal reads per gen voor iedere sample werd vastgelegd.
+# 
 
+# De analyse werd uitgevoerd in R met behulp van:
 
+# 
 
-Differentiële genexpressie werd bepaald met DESeq2 (v1.52.0). Genen werden als significant beschouwd wanneer de gecorrigeerde p-waarde (padj) kleiner was dan 0,05 en de absolute log2 fold change groter was dan 1. De resultaten werden gevisualiseerd met EnhancedVolcano (v1.30.0) en aanvullende figuren werden gemaakt met ggplot2 (v4.0.3).
+# Rsubread (v2.26.0)
 
+# Rsamtools (v2.28.0)
 
+# DESeq2 (v1.52.0)
 
-Om inzicht te verkrijgen in de biologische betekenis van de differentieel tot expressie komende genen werd een Gene Ontology-analyse uitgevoerd met goseq (v1.64.0). Hierbij werd gecorrigeerd voor genlengtebias met behulp van geneLenDataBase (v1.48.0). Genannotaties werden verkregen via org.Hs.eg.db (v3.23.1) en AnnotationDbi (v1.74.0). Significant verrijkte GO-termen werden geselecteerd met een Benjamini-Hochberg gecorrigeerde p-waarde kleiner dan 0,05.
+# goseq (v1.64.0)
 
+# geneLenDataBase (v1.48.0)
 
+# org.Hs.eg.db (v3.23.1)
 
-Daarnaast werd een KEGG pathway-analyse uitgevoerd met clusterProfiler (v4.20.0) en KEGGREST (v1.52.0). De gevonden pathways werden gevisualiseerd met pathview (v1.52.0), waarbij genexpressieveranderingen direct op de pathwaykaart werden weergegeven. De IL-17 signaling pathway werd geselecteerd voor verdere interpretatie vanwege de bekende betrokkenheid bij ontstekingsreacties en reumatoïde artritis.
+# AnnotationDbi (v1.74.0)
 
+# clusterProfiler (v4.20.0)
 
+# KEGGREST (v1.52.0)
 
-### **Resultaten**
+# pathview (v1.52.0)
 
-De differentiële genexpressieanalyse identificeerde een groot aantal genen die significant verschillend tot expressie kwamen tussen RA-patiënten en controles. De vulcanoplot liet zien dat zowel opgereguleerde als neer-gereguleerde genen aanwezig waren.
+# EnhancedVolcano (v1.30.0)
 
+# ggplot2 (v4.0.3)
 
+# 
 
-De GO-analyse toonde een sterke verrijking van immuun-gerelateerde processen. De meest significante termen waren onder andere adaptive immune response, immune response, B cell mediated immunity en immunoglobulin complex. Deze resultaten wijzen op een verhoogde activiteit van het adaptieve immuunsysteem in RA-synovium.
+# 🧬 Het humane referentiegenoom GRCh38.p14 (NCBI Assembly GCF\_000001405.40) werd gebruikt voor genannotatie.
 
+# 
 
+# 📊 Differentiële genexpressie
 
-De KEGG-analyse identificeerde meerdere ontstekingsgerelateerde pathways, waaronder de IL-17 signaling pathway. Binnen deze pathway waren verschillende chemokines verhoogd tot expressie gebracht, waaronder CXCL1, CXCL2, CXCL5, CXCL8 en CCL7. Deze genen vormen een belangrijk onderdeel van de ontstekingscascade doordat zij immuuncellen aantrekken naar ontstoken weefsels.
+# 
 
+# Uitgevoerd met DESeq2.
 
+# 
 
-De Pathview-visualisatie liet zien dat deze chemokines zich bevinden aan het einde van de IL-17-signaleringsroute, downstream van transcriptiefactoren zoals AP-1 en NF-κB. De verhoogde expressie van deze genen suggereert dat IL-17-gemedieerde ontstekingssignalen actief zijn in het synovium van patiënten met reumatoïde artritis.
+# Bestanden:
 
+# 
 
+# resultaten/02\_DESeq2\_results.csv
 
-### **Conclusie**
+# resultaten/04\_significante\_genen.csv
 
-Deze transcriptomicsanalyse laat zien dat het synovium van patiënten met reumatoïde artritis wordt gekenmerkt door een sterke activatie van immuun- en ontstekingsgerelateerde processen. Zowel de GO-analyse als de KEGG pathway analyse wijzen op een centrale rol van het adaptieve immuunsysteem bij de ziekte.
+# 
 
+# 📚 Methodologische referentie:
 
+# 
 
-Binnen de IL-17 signaling pathway werd een duidelijke opregulatie gevonden van meerdere chemokines, waaronder CXCL1, CXCL2, CXCL5, CXCL8 en CCL7. Deze moleculen spelen een belangrijke rol bij het aantrekken van neutrofielen, monocyten en andere immuuncellen naar ontstoken gewrichten. Hierdoor kunnen zij bijdragen aan het in stand houden van chronische ontsteking en gewrichtsschade.
+# referenties/Love\_2014\_DESeq2.pdf
 
+# 🧩 GO-verrijkingsanalyse
 
+# 
 
-De resultaten sluiten aan bij de huidige kennis over de rol van IL-17 in reumatoïde artritis en ondersteunen het idee dat deze pathway een belangrijk therapeutisch aangrijpingspunt vormt. Toekomstig onderzoek zou kunnen onderzoeken welke van de geïdentificeerde chemokines het sterkst bijdragen aan ziekteprogressie en of deze gebruikt kunnen worden als biomarker voor ziekteactiviteit of behandelingsrespons.
+# Uitgevoerd met goseq.
+
+# 
+
+# Bestanden:
+
+# 
+
+# resultaten/07\_GO\_results.csv
+
+# resultaten/05\_top10\_GO.csv
+
+# 
+
+# 📚 Methodologische referentie:
+
+# 
+
+# referenties/Young\_2010\_GOseq.pdf
+
+# 🛤️ KEGG pathway-analyse
+
+# 
+
+# Uitgevoerd met clusterProfiler, KEGGREST en pathview.
+
+# 
+
+# Bestanden:
+
+# 
+
+# resultaten/08\_KEGG\_results.csv
+
+# resultaten/09\_IL17\_pathway.png
+
+# figuren/IL-17 pathway.PNG
+
+# 
+
+# 📚 Achtergrondinformatie:
+
+# 
+
+# referenties/Luo\_2013\_Pathview.pdf
+
+# 📈 Resultaten
+
+# 🧬 Differentiële genexpressie
+
+# 
+
+# De differentiële genexpressieanalyse (resultaten/02\_DESeq2\_results.csv) identificeerde een groot aantal genen die significant verschillend tot expressie kwamen tussen RA-patiënten en controles.
+
+# 
+
+# 📉 De vulcanoplot (resultaten/03\_Vulcanoplot.PNG) toont zowel opgereguleerde als neer-gereguleerde genen.
+
+# 
+
+# 🧩 GO-verrijkingsanalyse
+
+# 
+
+# De GO-analyse (resultaten/07\_GO\_results.csv) liet een sterke verrijking zien van immuungerelateerde processen.
+
+# 
+
+# Belangrijke verrijkte termen:
+
+# 
+
+# adaptive immune response
+
+# immune response
+
+# B cell mediated immunity
+
+# immunoglobulin complex
+
+# 
+
+# 📊 Overzicht:
+
+# 
+
+# resultaten/05\_top10\_GO.csv
+
+# figuren/Top 10 verrijkte GO-termen.PNG
+
+# 🔥 IL-17 pathway
+
+# 
+
+# De KEGG-analyse (resultaten/08\_KEGG\_results.csv) identificeerde meerdere ontstekingsgerelateerde pathways.
+
+# 
+
+# Voor verdere interpretatie werd ingezoomd op de IL-17-signaleringsroute (resultaten/09\_IL17\_pathway.png).
+
+# 
+
+# ⬆️ Opreguleerde genen binnen deze pathway:
+
+# 
+
+# CXCL1
+
+# CXCL2
+
+# CXCL5
+
+# CXCL8
+
+# CCL7
+
+# 
+
+# Deze genen zijn betrokken bij de recrutering van immuuncellen naar ontstoken weefsels.
+
+# 
+
+# 📚 Verdere biologische achtergrond:
+
+# 
+
+# referenties/Lubberts\_2015\_IL17\_RA.pdf
+
+# 🎓 Conclusie
+
+# 
+
+# Deze transcriptomicsanalyse laat zien dat het synovium van patiënten met reumatoïde artritis wordt gekenmerkt door een sterke activatie van immuun- en ontstekingsgerelateerde processen.
+
+# 
+
+# ✅ De GO-analyse (resultaten/07\_GO\_results.csv) en de KEGG pathway-analyse (resultaten/08\_KEGG\_results.csv) wijzen beide op een belangrijke rol van het adaptieve immuunsysteem bij de ziekte.
+
+# 
+
+# 🔥 Binnen de IL-17-signaleringsroute (resultaten/09\_IL17\_pathway.png; figuren/IL-17 pathway.PNG) werd een duidelijke opregulatie waargenomen van:
+
+# 
+
+# CXCL1
+
+# CXCL2
+
+# CXCL5
+
+# CXCL8
+
+# CCL7
+
+# 
+
+# Deze chemokines spelen een belangrijke rol bij de recrutering van immuuncellen naar ontstoken weefsels en kunnen bijdragen aan het in stand houden van chronische ontsteking.
+
+# 
+
+# 📚 De rol van IL-17 bij reumatoïde artritis wordt verder beschreven in:
+
+# 
+
+# referenties/Lubberts\_2015\_IL17\_RA.pdf
+
+# 
+
+# 🧠 De resultaten ondersteunen de huidige kennis over de betrokkenheid van de IL-17-signaleringsroute bij reumatoïde artritis.
+
+# 
+
+# 📊 Daarnaast bevestigen de verrijkte immuungerelateerde GO-termen (resultaten/05\_top10\_GO.csv; figuren/Top 10 verrijkte GO-termen.PNG) dat ontregeling van het immuunsysteem een centraal kenmerk is van de ziekte.
+
+# 
+
+# 📚 Algemene achtergrondinformatie over de pathogenese van reumatoïde artritis is opgenomen in:
+
+# 
+
+# referenties/Smolen\_2016\_Rheumatoid\_Arthritis.
 
