@@ -7,8 +7,8 @@ Reumatoïde artritis (RA) is een chronische auto-immuunziekte die wordt gekenmer
 In deze casus werden RNA-sequencinggegevens van synoviumbiopten van vier gezonde controles en vier patiënten met vastgestelde RA geanalyseerd. De gebruikte invoerbestanden zijn opgenomen in de map Data ([Count matrix](Data/count_matrix_RA.txt), [Metadata](Data/metadata.csv), controle groep en RA groep). Het doel van de analyse was het identificeren van differentieel tot expressie komende genen, gevolgd door GO- en KEGG-verrijkingsanalyses. Speciale aandacht werd besteed aan de IL-17-signaleringsroute vanwege de bekende rol van IL-17 bij ontstekingsprocessen in RA.
 
 Achtergrondinformatie over RA en IL-17 is opgenomen in:
-- [Smolen 2016 Rheumatoid Arthritis](referenties/Smolen_2016_Rheumatoid_Arthritis.pdf)
-- [Lubberts 2015 IL17 RA](referenties/Lubberts_2015_IL17_RA.pdf)
+- [Smolen 2016 Rheumatoid Arthritis](Referenties/Smolen_2016_Rheumatoid_Arthritis.pdf)
+- [Lubberts 2015 IL17 RA](Referenties/Lubberts_2015_IL17_RA.pdf)
 
 ---
 
@@ -16,11 +16,11 @@ Achtergrondinformatie over RA en IL-17 is opgenomen in:
 
 De analyse werd uitgevoerd in R met behulp van Rsubread (v2.26.0), Rsamtools (v2.28.0), DESeq2 (v1.52.0), goseq (v1.64.0), geneLenDataBase (v1.48.0), org.Hs.eg.db (v3.23.1), AnnotationDbi (v1.74.0), clusterProfiler (v4.20.0), KEGGREST (v1.52.0), pathview (v1.52.0), EnhancedVolcano (v1.30.0) en ggplot2 (v4.0.3). Het humane referentiegenoom GRCh38.p14 (NCBI Assembly GCF_000001405.40) werd gebruikt voor genannotatie.
 
-Differentiële genexpressieanalyse werd uitgevoerd met DESeq2. De resultaten zijn opgeslagen in [DESeq2 resultaten](resultaten/02_DESeq2_results.csv). Significante genen zijn opgenomen in [Significante genen](resultaten/04_significante_genen.csv). Methodologische informatie over DESeq2 is beschikbaar in [Love 2014 DESeq2](referenties/Love_2014_DESeq2.pdf).
+Differentiële genexpressieanalyse werd uitgevoerd met DESeq2. De resultaten zijn opgeslagen in [DESeq2 resultaten](Resultaten/02_DESeq2_results.csv). Significante genen zijn opgenomen in [Significante genen](Resultaten/04_significante_genen.csv). Methodologische informatie over DESeq2 is beschikbaar in [Love 2014 DESeq2](Referenties/Love_2014_DESeq2.pdf).
 
-GO-verrijkingsanalyse werd uitgevoerd met goseq. De resultaten zijn opgeslagen in [GO resultaten](resultaten/07_GO_results.csv), terwijl de top 10 verrijkte termen zijn opgenomen in [Top 10 GO](resultaten/05_top10_GO.csv). De bijbehorende methodologische referentie is opgenomen in [Young 2010 GOseq](referenties/Young_2010_GOseq.pdf).
+GO-verrijkingsanalyse werd uitgevoerd met goseq. De resultaten zijn opgeslagen in [GO resultaten](Resultaten/07_GO_results.csv), terwijl de top 10 verrijkte termen zijn opgenomen in [Top 10 GO](Resultaten/05_top10_GO.csv). De bijbehorende methodologische referentie is opgenomen in [Young 2010 GOseq](Referenties/Young_2010_GOseq.pdf).
 
-KEGG pathway-analyse werd uitgevoerd met clusterProfiler, KEGGREST en pathview. De resultaten zijn opgeslagen in [KEGG resultaten](resultaten/08_KEGG_results.csv). De visualisatie van de IL-17-signaleringsroute is opgeslagen in [IL17 pathway](resultaten/09_IL17_pathway.png) en [IL-17 pathway](figuren/IL17_pathway.png). Achtergrondinformatie over pathwayvisualisatie is opgenomen in [Luo 2013 Pathview](referenties/Luo_2013_Pathview.pdf).
+KEGG pathway-analyse werd uitgevoerd met clusterProfiler, KEGGREST en pathview. De resultaten zijn opgeslagen in [KEGG resultaten](Resultaten/08_KEGG_results.csv). De visualisatie van de IL-17-signaleringsroute is opgeslagen in [IL17 pathway](Resultaten/09_IL17_pathway.png) en [IL-17 pathway](Figuren/IL17_pathway.png). Achtergrondinformatie over pathwayvisualisatie is opgenomen in [Luo 2013 Pathview](Referenties/Luo_2013_Pathview.pdf).
 
 ---
 
