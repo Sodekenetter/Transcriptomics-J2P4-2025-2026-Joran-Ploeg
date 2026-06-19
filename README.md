@@ -20,7 +20,7 @@ Differentiële genexpressieanalyse werd uitgevoerd met DESeq2. De resultaten zij
 
 GO-verrijkingsanalyse werd uitgevoerd met goseq. De resultaten zijn opgeslagen in [GO resultaten](Resultaten/07_GO_results.csv), terwijl de top 10 verrijkte termen zijn opgenomen in [Top 10 GO](Resultaten/05_top10_GO.csv). De bijbehorende methodologische referentie is opgenomen in [Young 2010 GOseq](Referenties/Young_2010_GOseq.pdf).
 
-KEGG pathway-analyse werd uitgevoerd met clusterProfiler, KEGGREST en pathview. De resultaten zijn opgeslagen in [KEGG resultaten](Resultaten/08_KEGG_results.csv). De visualisatie van de IL-17-signaleringsroute is opgeslagen in [IL17 pathway](Resultaten/09_IL17_pathway.png) en [IL-17 pathway](Figuren/IL17_pathway.png). Achtergrondinformatie over pathwayvisualisatie is opgenomen in [Luo 2013 Pathview](Referenties/Luo_2013_Pathview.pdf).
+KEGG pathway-analyse werd uitgevoerd met clusterProfiler, KEGGREST en pathview. De resultaten zijn opgeslagen in [KEGG resultaten](Resultaten/08_KEGG_results.csv). De visualisatie van de IL-17-signaleringsroute is opgeslagen in [IL17 pathway](Resultaten/09_IL17_pathway.png) en [IL-17 pathway](Figuren/IL17 pathway.png). Achtergrondinformatie over pathwayvisualisatie is opgenomen in [Luo 2013 Pathview](Referenties/Luo_2013_Pathview.pdf).
 
 ---
 
