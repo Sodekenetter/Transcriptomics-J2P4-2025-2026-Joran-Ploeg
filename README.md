@@ -16,11 +16,11 @@ Achtergrondinformatie over RA en IL-17 is opgenomen in:
 
 De analyse werd uitgevoerd in R met behulp van Rsubread (v2.26.0), Rsamtools (v2.28.0), DESeq2 (v1.52.0), goseq (v1.64.0), geneLenDataBase (v1.48.0), org.Hs.eg.db (v3.23.1), AnnotationDbi (v1.74.0), clusterProfiler (v4.20.0), KEGGREST (v1.52.0), pathview (v1.52.0), EnhancedVolcano (v1.30.0) en ggplot2 (v4.0.3). Het humane referentiegenoom GRCh38.p14 (NCBI Assembly GCF_000001405.40) werd gebruikt voor genannotatie.
 
-Differentiële genexpressieanalyse werd uitgevoerd met DESeq2. De resultaten zijn opgeslagen in [DESeq2 resultaten](resultaten/02_DESeq2_results.csv). Significante genen zijn opgenomen in [Significante genen](resultaten/04_significante_genen.csv). Methodologische informatie over DESeq2 is beschikbaar in [Love_2014_DESeq2.pdf](referenties/Love_2014_DESeq2.pdf).
+Differentiële genexpressieanalyse werd uitgevoerd met DESeq2. De resultaten zijn opgeslagen in [DESeq2 resultaten](resultaten/02_DESeq2_results.csv). Significante genen zijn opgenomen in [Significante genen](resultaten/04_significante_genen.csv). Methodologische informatie over DESeq2 is beschikbaar in [Love 2014 DESeq2](referenties/Love_2014_DESeq2.pdf).
 
-GO-verrijkingsanalyse werd uitgevoerd met goseq. De resultaten zijn opgeslagen in [07_GO_results.csv](resultaten/07_GO_results.csv), terwijl de top 10 verrijkte termen zijn opgenomen in [05_top10_GO.csv](resultaten/05_top10_GO.csv). De bijbehorende methodologische referentie is opgenomen in [Young_2010_GOseq.pdf](referenties/Young_2010_GOseq.pdf).
+GO-verrijkingsanalyse werd uitgevoerd met goseq. De resultaten zijn opgeslagen in [GO results](resultaten/07_GO_results.csv), terwijl de top 10 verrijkte termen zijn opgenomen in [top10 GO](resultaten/05_top10_GO.csv). De bijbehorende methodologische referentie is opgenomen in [Young 2010 GOseq](referenties/Young_2010_GOseq.pdf).
 
-KEGG pathway-analyse werd uitgevoerd met clusterProfiler, KEGGREST en pathview. De resultaten zijn opgeslagen in [08_KEGG_results.csv](resultaten/08_KEGG_results.csv). De visualisatie van de IL-17-signaleringsroute is opgeslagen in [09_IL17_pathway.png](resultaten/09_IL17_pathway.png) en [IL-17 pathway.PNG](figuren/IL-17 pathway.PNG). Achtergrondinformatie over pathwayvisualisatie is opgenomen in [Luo_2013_Pathview.pdf](referenties/Luo_2013_Pathview.pdf).
+KEGG pathway-analyse werd uitgevoerd met clusterProfiler, KEGGREST en pathview. De resultaten zijn opgeslagen in [KEGG resultaten](resultaten/08_KEGG_results.csv). De visualisatie van de IL-17-signaleringsroute is opgeslagen in [IL17 pathway](resultaten/09_IL17_pathway.png) en [IL-17 pathway](figuren/IL17). Achtergrondinformatie over pathwayvisualisatie is opgenomen in [Luo 2013 Pathview](referenties/Luo_2013_Pathview.pdf).
 
 ---
 
