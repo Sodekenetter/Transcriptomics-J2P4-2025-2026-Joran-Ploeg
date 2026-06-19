@@ -8,7 +8,7 @@ In deze casus werden RNA-sequencinggegevens van synoviumbiopten van vier gezonde
 
 Achtergrondinformatie over RA en IL-17 is opgenomen in:
 - [Smolen 2016 Rheumatoid Arthritis](referenties/Smolen_2016_Rheumatoid_Arthritis.pdf)
-- [Lubberts 2015 IL17 RA.](referenties/Lubberts_2015_IL17_RA.pdf)
+- [Lubberts 2015 IL17 RA](referenties/Lubberts_2015_IL17_RA.pdf)
 
 ---
 
