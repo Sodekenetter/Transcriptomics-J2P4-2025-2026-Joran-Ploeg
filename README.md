@@ -1,7 +1,5 @@
 # 🧬 Transcriptomische analyse van reumatoïde artritis: identificatie van differentieel tot expressie komende genen en betrokkenheid van de IL-17-signaleringsroute
 
-
-
 ### 📖 Inleiding
 
 
@@ -10,11 +8,7 @@ Reumatoïde artritis (RA) is een chronische auto-immuunziekte die wordt gekenmer
 
 
 
-<<<<<<< HEAD
 In deze casus werden RNA-sequencinggegevens van synoviumbiopten van vier gezonde controles en vier patiënten met vastgestelde RA geanalyseerd. De gebruikte invoerbestanden zijn opgenomen in de map Data (Countmatrix en Metadata). Het doel van de analyse was het identificeren van differentieel tot expressie komende genen, gevolgd door GO- en KEGG-verrijkingsanalyses. Speciale aandacht werd besteed aan de IL-17-signaleringsroute vanwege de bekende rol van IL-17 bij ontstekingsprocessen in RA. Achtergrondinformatie over RA en IL-17 is opgenomen in Smolen et al. (2016) en Lubberts (2015).
-=======
-In deze casus werden RNA-sequencinggegevens van synoviumbiopten van vier gezonde controles en vier patiënten met vastgestelde RA geanalyseerd. De gebruikte invoerbestanden komen uit de map [Data](Data/), dit zijn de count matrix, de metadata en dataset. Het doel van de analyse was het identificeren van differentieel tot expressie komende genen, gevolgd door GO- en KEGG-verrijkingsanalyses. Speciale aandacht werd besteed aan de IL-17-signaleringsroute vanwege de bekende rol van IL-17 bij ontstekingsprocessen in RA. Achtergrondinformatie over RA en IL-17 is opgenomen in referenties/Smolen\_2016\_Rheumatoid\_Arthritis.pdf en referenties/Lubberts\_2015\_IL17\_RA.pdf.
->>>>>>> 9eae819e08ab66526c072cc24ff54124bcf20e4d
 
 
 
