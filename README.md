@@ -54,10 +54,10 @@ De KEGG-analyse identificeerde meerdere ontstekingsgerelateerde pathways. Binnen
 
 ## 🎓 Conclusie
 
-Deze transcriptomicsanalyse laat zien dat het synovium van patiënten met reumatoïde artritis wordt gekenmerkt door een sterke activatie van immuun- en ontstekingsgerelateerde processen. Zowel de [GO resultaten](Resultaten/07_GO_results.csv) als de [KEGG resultaten](Resultaten/08_KEGG_results.csv) wijzen op een belangrijke rol van het adaptieve immuunsysteem bij de ziekte.
+Dit onderzoek laat zien dat RA gepaard gaat met omvangrijke veranderingen in genexpressie binnen synoviaal weefsel. De differentiële genexpressieanalyse identificeerde een groot aantal genen die verschillen tussen RA-patiënten en gezonde controles.
 
-Binnen de [IL17 pathway](Resultaten/09_IL17_pathway.png) en de bijbehorende figuur [IL-17 pathway](figuren/IL17 pathway.png) werd een duidelijke opregulatie waargenomen van de chemokines CXCL1, CXCL2, CXCL5, CXCL8 en CCL7. Deze moleculen spelen een belangrijke rol bij de recrutering van immuuncellen naar ontstoken weefsels en kunnen daardoor bijdragen aan het in stand houden van chronische ontsteking. De rol van IL-17 en de bijbehorende ontstekingsprocessen bij reumatoïde artritis wordt verder beschreven in [Lubberts 2015 IL17 RA](Referenties/Lubberts_2015_IL17_RA.pdf).
+De GO-verrijkingsanalyse toont aan dat vooral processen gerelateerd aan immuunactivatie en adaptieve afweer zijn verrijkt. Daarnaast identificeerde de KEGG-analyse meerdere ontstekingsgerelateerde pathways, waaronder de IL-17-signaleringsroute. De opregulatie van CXCL1, CXCL2, CXCL5, CXCL8 en CCL7 suggereert dat IL-17-gemedieerde recrutering van immuuncellen kan bijdragen aan het in stand houden van chronische ontsteking.
 
-De resultaten van deze analyse ondersteunen de huidige kennis over de betrokkenheid van de IL-17-signaleringsroute bij reumatoïde artritis. Daarnaast bevestigen de verrijkte immuungerelateerde GO-termen ([Top 10 GO](Resultaten/05_top10_GO.csv) en [Top 10 verrijkte GO-termen](Resultaten/06_Top_10_verrijkte_GO-termen.png)) dat ontregeling van het immuunsysteem een centraal kenmerk is van de ziekte.
+Daarmee beantwoorden de resultaten de hoofdvraag: RA-patiënten onderscheiden zich van gezonde controles door veranderingen in genexpressie die voornamelijk samenhangen met immuun- en ontstekingsprocessen, waarbij de IL-17-signaleringsroute een belangrijke rol lijkt te spelen.
 
-Algemene achtergrondinformatie over de pathogenese van reumatoïde artritis is opgenomen in [Smolen 2016 Rheumatoid Arthritis](Referenties/Smolen_2016_Rheumatoid_Arthritis.pdf).
+---
