@@ -34,11 +34,21 @@ De analyse werd uitgevoerd in R met behulp van Rsubread (v2.26.0), Rsamtools (v2
 
 ## 📈 Resultaten
 
-De differentiële genexpressieanalyse ([DESeq2 resultaten](Resultaten/02_DESeq2_results.csv)) identificeerde een groot aantal genen die significant verschillend tot expressie kwamen tussen RA-patiënten en controles. De [VulcanoplotRA](Figuren/VolcanoplotRA.png) toont zowel opgereguleerde als neer-gereguleerde genen.
+**Differentiële genexpressie**
 
-De GO-analyse ([GO resultaten](Resultaten/07_GO_results.csv)) liet een sterke verrijking zien van immuungerelateerde processen. De meest significante termen betroffen onder andere *adaptive immune response*, *immune response*, *B cell mediated immunity* en *immunoglobulin complex*. Een overzicht van de top 10 verrijkte termen is weergegeven in [Top 10 GO](Resultaten/05_top10_GO.csv) en [Top 10 verrijkte GO-termen](Resultaten/06_Top_10_verrijkte_GO-termen.png).
+Om genen te identificeren die verschillen tussen RA-patiënten en gezonde controles werd een differentiële genexpressieanalyse uitgevoerd. In totaal werden [AANTAL] significante genen geïdentificeerd (adjusted p < 0,05), waarvan [AANTAL] opgereguleerd en [AANTAL] neergereguleerd waren. Een overzicht van deze resultaten is weergegeven in [DESeq2 resultaten](Resultaten/02_DESeq2_results.csv) en de [VulcanoplotRA](Figuren/VolcanoplotRA.png).
 
-De KEGG-analyse ([KEGG resultaten](Resultaten/08_KEGG_results.csv)) identificeerde meerdere ontstekingsgerelateerde pathways. Voor verdere interpretatie werd ingezoomd op de [IL17 pathway](Resultaten/09_IL17_pathway.png). Binnen deze pathway waren de chemokines CXCL1, CXCL2, CXCL5, CXCL8 en CCL7 opgereguleerd. Deze genen zijn betrokken bij de recrutering van immuuncellen naar ontstoken weefsels. De biologische relevantie van IL-17 voor RA wordt verder beschreven in [Lubberts 2015 IL17 RA](Referenties/Lubberts_2015_IL17_RA.pdf).
+**GO-verrijkingsanalyse**
+
+Om betrokken biologische processen te identificeren werd een GO-verrijkingsanalyse uitgevoerd. De sterkst verrijkte termen betroffen onder andere adaptive immune response, immune response, B cell mediated immunity en immunoglobulin complex. Deze resultaten wijzen op een belangrijke rol van het adaptieve immuunsysteem bij RA. Een overzicht van de verrijkte termen is opgenomen in [Top 10 GO](Resultaten/05_top10_GO.csv) en [Top 10 verrijkte GO-termen](Resultaten/06_Top_10_verrijkte_GO-termen.png).
+
+**KEGG pathway-analyse**
+
+De KEGG-analyse identificeerde meerdere ontstekingsgerelateerde pathways. Binnen de geselecteerde IL-17-signaleringsroute waren de chemokines CXCL1, CXCL2, CXCL5, CXCL8 en CCL7 opgereguleerd. Deze genen spelen een rol bij de recrutering van immuuncellen naar ontstoken weefsels. De pathwayvisualisatie is weergegeven in [IL17 pathway](Resultaten/09_IL17_pathway.png).
+
+---
+
+ De biologische relevantie van IL-17 voor RA wordt verder beschreven in [Lubberts 2015 IL17 RA](Referenties/Lubberts_2015_IL17_RA.pdf).
 
 ---
 
