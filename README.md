@@ -2,13 +2,13 @@
 
 ## 📖 Inleiding
 
-Reumatoïde artritis (RA) is een chronische auto-immuunziekte die wordt gekenmerkt door ontsteking van het synoviale membraan van gewrichten. Deze ontsteking kan leiden tot kraakbeen- en botafbraak en uiteindelijk tot blijvende gewrichtsschade. Transcriptomics maakt het mogelijk om verschillen in genexpressie tussen gezonde en zieke weefsels te onderzoeken en betrokken biologische processen en signaalroutes te identificeren.
+Reumatoïde artritis (RA) is een chronische auto-immuunziekte die ongeveer 0,5–1% van de wereldbevolking treft en wordt gekenmerkt door aanhoudende ontsteking van het synoviale membraan. Deze ontsteking kan leiden tot kraakbeen- en botafbraak, pijn en blijvende gewrichtsschade. Hoewel de exacte oorzaak van RA nog niet volledig bekend is, spelen ontregelde immuunreacties een centrale rol in de pathogenese ([Smolen 2016 Rheumatoid Arthritis](Referenties/Smolen_2016_Rheumatoid_Arthritis.pdf)).
 
-In deze casus werden RNA-sequencinggegevens van synoviumbiopten van vier gezonde controles en vier patiënten met vastgestelde RA geanalyseerd. De gebruikte invoerbestanden zijn opgenomen in de map Data ([Count matrix](Data/count_matrix_RA.txt), [Metadata](Data/metadata.csv), controle groep en RA groep). Het doel van de analyse was het identificeren van differentieel tot expressie komende genen, gevolgd door GO- en KEGG-verrijkingsanalyses. Speciale aandacht werd besteed aan de IL-17-signaleringsroute vanwege de bekende rol van IL-17 bij ontstekingsprocessen in RA.
+Transcriptomics maakt het mogelijk om verschillen in genexpressie tussen gezonde en zieke weefsels te onderzoeken en betrokken biologische processen te identificeren. Eerdere studies hebben aangetoond dat ontstekingsroutes, waaronder IL-17-signalering, bijdragen aan de ontwikkeling en instandhouding van RA ([Lubberts 2015 IL17 RA](Referenties/Lubberts_2015_IL17_RA.pdf)). Het is echter niet altijd duidelijk welke genen en biologische processen binnen een specifieke dataset het sterkst bijdragen aan de ziekte.
 
-Achtergrondinformatie over RA en IL-17 is opgenomen in:
-- [Smolen 2016 Rheumatoid Arthritis](Referenties/Smolen_2016_Rheumatoid_Arthritis.pdf)
-- [Lubberts 2015 IL17 RA](Referenties/Lubberts_2015_IL17_RA.pdf)
+Het doel van dit onderzoek was daarom het identificeren van differentieel geëxpresseerde genen tussen RA-patiënten en gezonde controles, gevolgd door Gene Ontology (GO)- en KEGG-verrijkingsanalyses om betrokken biologische processen en signaalroutes in kaart te brengen.
+
+Hoofdvraag: Welke genexpressieveranderingen en biologische processen onderscheiden RA-patiënten van gezonde controles?
 
 ---
 
