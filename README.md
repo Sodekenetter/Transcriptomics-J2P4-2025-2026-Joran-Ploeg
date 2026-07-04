@@ -26,8 +26,6 @@ De lijst met significante genen werd vervolgens gebruikt voor een GO-verrijkings
 
 Daarnaast werd een KEGG pathway-analyse uitgevoerd met clusterProfiler. Verrijkte pathways werden opgeslagen in [KEGG resultaten](Resultaten/08_KEGG_results.csv). De IL-17-signaleringsroute (hsa04657) werd geselecteerd voor visualisatie met pathview ([Luo 2013 Pathview](Referenties/Luo_2013_Pathview.pdf)) en opgeslagen als [IL17 pathway](Resultaten/09_IL17_pathway.png).
 
----
-
 De analyse werd uitgevoerd in R met behulp van Rsubread (v2.26.0), Rsamtools (v2.28.0), DESeq2 (v1.52.0), goseq (v1.64.0), geneLenDataBase (v1.48.0), org.Hs.eg.db (v3.23.1), AnnotationDbi (v1.74.0), clusterProfiler (v4.20.0), KEGGREST (v1.52.0), pathview (v1.52.0), EnhancedVolcano (v1.30.0) en ggplot2 (v4.0.3). Het humane referentiegenoom GRCh38.p14 (NCBI Assembly GCF_000001405.40) werd gebruikt voor genannotatie.
 
 ---
