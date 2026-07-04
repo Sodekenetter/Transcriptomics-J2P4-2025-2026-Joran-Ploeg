@@ -48,10 +48,6 @@ De KEGG-analyse identificeerde meerdere ontstekingsgerelateerde pathways. Binnen
 
 ---
 
- De biologische relevantie van IL-17 voor RA wordt verder beschreven in [Lubberts 2015 IL17 RA](Referenties/Lubberts_2015_IL17_RA.pdf).
-
----
-
 ## 🎓 Conclusie
 
 Dit onderzoek laat zien dat RA gepaard gaat met omvangrijke veranderingen in genexpressie binnen synoviaal weefsel. De differentiële genexpressieanalyse identificeerde een groot aantal genen die verschillen tussen RA-patiënten en gezonde controles.
