@@ -142,7 +142,15 @@ countsRA_filt <- countsRA[keep, ]
 resultatenRA_filt <- resultatenRA[keep, ]
 
 DE_genen <- resultatenRA[resultatenRA$padj < 0.05 & abs(resultatenRA$log2FoldChange) > 1,]
+DE_genen <- DE_genen %>%
+  filter(!is.na(padj))
 head(DE_genen)
+
+DE_genen_up <- DE_genen[DE_genen$log2FoldChange > 0,]
+head(DE_genen_up)
+
+DE_genen_down <- DE_genen[DE_genen$log2FoldChange < 0,]
+head(DE_genen_down)
 
 write.csv(DE_genen, "04_significante_genen.csv", row.names = TRUE)
 
