@@ -22,7 +22,7 @@ Count matrix + metadata -> Differentiële genexpressieanalyse (DESeq2) -> Select
 
 Differentiële genexpressie werd bepaald met DESeq2 ([Love 2014 DESeq2](Referenties/Love_2014_DESeq2.pdf)). Genen werden als significant beschouwd bij een adjusted p-waarde < 0,01. De resultaten zijn opgeslagen in [DESeq2 resultaten](Resultaten/02_DESeq2_results.csv) en [Significante genen](Resultaten/04_significante_genen.csv).
 
-De lijst met significante genen werd vervolgens gebruikt voor een GO-verrijkingsanalyse met goseq ([Young 2010 GOseq](Referenties/Young_2010_GOseq.pdf)). Voor de GO- en KEGG-analyse werden uitsluitend genen gebruikt met een adjusted p-waarde < 0,01 en |log2FC| > 1. De resultaten zijn beschikbaar in [GO resultaten](Resultaten/06_GO_results.csv).
+De lijst met significante genen werd vervolgens gebruikt voor een GO-verrijkingsanalyse met goseq ([Young 2010 GOseq](Referenties/Young_2010_GOseq.pdf)).Voor de GO- en KEGG-analyse werden genen met een adjusted p-waarde < 0,01 en |log2FC| > 1 als differentieel geëxpresseerd beschouwd. De resultaten zijn beschikbaar in [GO resultaten](Resultaten/06_GO_results.csv).
 
 Daarnaast werd een KEGG pathway-analyse uitgevoerd met clusterProfiler. Verrijkte pathways werden opgeslagen in [KEGG resultaten](Resultaten/07_KEGG_results.csv). De IL-17-signaleringsroute (hsa04657) werd geselecteerd voor visualisatie met pathview ([Luo 2013 Pathview](Referenties/Luo_2013_Pathview.pdf)) en opgeslagen als [IL17 pathway](Resultaten/08_IL17_pathway.png).
 
@@ -44,7 +44,7 @@ Om betrokken biologische processen te identificeren werd een GO-verrijkingsanaly
 
 **KEGG pathway-analyse**
 
-De KEGG-analyse identificeerde meerdere ontstekingsgerelateerde pathways. Binnen de geselecteerde IL-17-signaleringsroute waren de chemokines CXCL1, CXCL2, CXCL5, CXCL8 en CCL7 opgereguleerd. Deze genen spelen een rol bij de recrutering van immuuncellen naar ontstoken weefsels. De pathwayvisualisatie is weergegeven in [IL17 pathway](Resultaten/08_IL17_pathway.png).
+De KEGG-analyse identificeerde meerdere ontstekingsgerelateerde pathways. Binnen de geselecteerde IL-17-signaleringsroute waren meerdere chemokines opgereguleerd, waaronder CXCL1, CXCL2, CXCL5, CXCL8 en CCL7. De opregulatie van CXCL1, CXCL2, CXCL5, CXCL8 en CCL7 wijst erop dat vooral het chemokine-gemedieerde deel van de IL-17-signaleringsroute actief is binnen deze dataset. De pathwayvisualisatie is weergegeven in [IL17 pathway](Resultaten/08_IL17_pathway.png).
 
 ---
 
