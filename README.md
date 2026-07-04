@@ -28,7 +28,7 @@ Daarnaast werd een KEGG pathway-analyse uitgevoerd met clusterProfiler. Verrijkt
 
 De analyse werd uitgevoerd in R met behulp van Rsubread (v2.26.0), DESeq2 (v1.52.0), goseq (v1.64.0), geneLenDataBase (v1.48.0), org.Hs.eg.db (v3.23.1), AnnotationDbi (v1.74.0), clusterProfiler (v4.20.0), pathview (v1.52.0), EnhancedVolcano (v1.30.0) en ggplot2 (v4.0.3). Voor indexering en alignering van de RNA-sequencingdata werd het humane referentiegenoom GRCh38.p14 (NCBI Assembly GCF_000001405.40) gebruikt.
 
-De volledige analyse is uitgevoerd met het script [RNAseq_analysis.R](Scripts/RNAseq_analysis.R).
+De volledige analyse is uitgevoerd met het script [RNAseq_analysis RA.R](Script/Transcriptomics_RA.R).
 
 ---
 
