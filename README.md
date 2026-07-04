@@ -34,7 +34,7 @@ De analyse werd uitgevoerd in R met behulp van Rsubread (v2.26.0), Rsamtools (v2
 
 **Differentiële genexpressie**
 
-Om genen te identificeren die verschillen tussen RA-patiënten en gezonde controles werd een differentiële genexpressieanalyse uitgevoerd. In totaal werden 4572 significante genen geïdentificeerd (adjusted p < 0,05), waarvan 2085 opgereguleerd en 2487 neergereguleerd waren. Een overzicht van deze resultaten is weergegeven in [Significante genen](Resultaten/04_significante_genen.csv) en de [VulcanoplotRA](Figuren/VolcanoplotRA.png).
+Om genen te identificeren die verschillen tussen RA-patiënten en gezonde controles werd een differentiële genexpressieanalyse uitgevoerd. In totaal werden 4572 significante genen geïdentificeerd (adjusted p < 0,05), waarvan 2085 opgereguleerd en 2487 neergereguleerd waren. Een overzicht van deze resultaten is weergegeven in [Significante genen](Resultaten/04_significante_genen.csv) en de [VulcanoplotRA](Resultaten/03_VolcanoplotRA.png).
 
 **GO-verrijkingsanalyse**
 
