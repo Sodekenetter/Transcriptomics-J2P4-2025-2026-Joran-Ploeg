@@ -38,7 +38,7 @@ Om genen te identificeren die verschillen tussen RA-patiënten en gezonde contro
 
 **GO-verrijkingsanalyse**
 
-Om betrokken biologische processen te identificeren werd een GO-verrijkingsanalyse uitgevoerd. De sterkst verrijkte termen betroffen onder andere adaptive immune response, immune response, B cell mediated immunity en immunoglobulin complex. Deze resultaten wijzen op een belangrijke rol van het adaptieve immuunsysteem bij RA. Een overzicht van de verrijkte termen is opgenomen in [GO resultaten](Resultaten/06_GO_results.csv) en [Top 10 verrijkte GO-termen](Resultaten/05_Top_10_verrijkte_GO-termen.png).
+Om betrokken biologische processen te identificeren werd een GO-verrijkingsanalyse uitgevoerd. De sterkst verrijkte termen betroffen onder andere adaptive immune response, immune response, B cell mediated immunity en immunoglobulin complex. Deze resultaten wijzen op een belangrijke rol van het adaptieve immuunsysteem bij RA. Een overzicht van de verrijkte termen is opgenomen in [GO resultaten](Resultaten/06_GO_results.csv) en [Verrijkte GO-termen](Resultaten/05_Verrijkte_GO-termen.png).
 
 **KEGG pathway-analyse**
 
