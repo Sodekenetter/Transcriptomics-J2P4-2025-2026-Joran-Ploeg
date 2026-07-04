@@ -14,7 +14,7 @@ Hoofdvraag: Welke genexpressieveranderingen en biologische processen onderscheid
 
 ## ⚙️ Methode
 
-RNA-sequencinggegevens van synoviumbiopten van vier gezonde controles en vier RA-patiënten werden geanalyseerd. De gebruikte invoerbestanden zijn opgenomen als [Count matrix](Data/count_matrix.txt) en [Metadata](Data/metadata.csv).
+RNA-sequencinggegevens van synoviumbiopten van vier gezonde controles en vier RA-patiënten werden geanalyseerd. De gebruikte invoerbestanden zijn opgenomen als [Count matrix](Data/count_matrix_RA.txt) en [Metadata](Data/metadata.csv).
 
 De analyse werd uitgevoerd volgens de volgende workflow:
 
