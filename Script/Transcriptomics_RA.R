@@ -6,9 +6,7 @@ getwd()
   #Packages
 #install.packages('BiocManager')
 #BiocManager::install('Rsubread')
-#BiocManager::install('Rsamtools')
 #BiocManager::install("DESeq2")
-#BiocManager::install("KEGGREST")
 #BiocManager::install("EnhancedVolcano")
 #BiocManager::install("pathview")
 #BiocManager::install("goseq")
@@ -18,9 +16,7 @@ getwd()
 #BiocManager::install("AnnotationDbi")
 #install.packages("ggplot2")
 library(Rsubread)
-library(Rsamtools)
 library(DESeq2)
-library(KEGGREST)
 library(EnhancedVolcano)
 library(pathview)
 library(goseq)
@@ -139,16 +135,19 @@ keep <- rowSums(countsRA) > 0
 countsRA_filt <- countsRA[keep, ]
 resultatenRA_filt <- resultatenRA[keep, ]
 
-significante_genen <- resultatenRA[resultatenRA$padj < 0.05 & abs(resultatenRA$log2FoldChange) > 1,]
-significante_genen <- significante_genen %>%
-  filter(!is.na(padj))
+significante_genen <- resultatenRA[resultatenRA$padj < 0.01 & abs(resultatenRA$log2FoldChange) > 1,]
+significante_genen <- significante_genen[!is.na(significante_genen$padj), ]
 head(significante_genen)
+
+nrow(significante_genen)
 
 significante_genen_up <- significante_genen[significante_genen$log2FoldChange > 0,]
 head(significante_genen_up)
+nrow(significante_genen_up)
 
 significante_genen_down <- significante_genen[significante_genen$log2FoldChange < 0,]
 head(significante_genen_down)
+nrow(significante_genen_down)
 
 write.csv(significante_genen, "04_significante_genen.csv", row.names = TRUE)
 
@@ -169,7 +168,7 @@ GO.wall$padj_BF <- p.adjust(GO.wall$over_represented_pvalue, method = "bonferron
 significante_GO <- GO.wall[GO.wall$padj_BF <= 0.01 & GO.wall$numDEInCat >= 15 ,]
 
 significante_GO <- significante_GO[order(significante_GO$padj_BF),]
-head(significante_GO)
+head(significante_GO, 15)
 
 significante_GO$logFDR <- -log10(significante_GO$padj_BF)
 
@@ -183,7 +182,7 @@ dev.copy(png, '05_Verrijkte_GO-termen.png', width = 20, height = 10, units = 'in
 dev.off()
 
 write.csv(significante_GO, "06_GO_results.csv", row.names = FALSE)
-GO_analyse_resultaat <- read.csv("07_GO_results.csv")
+GO_analyse_resultaat <- read.csv("06_GO_results.csv")
 head(GO_analyse_resultaat, 10)
 
   #Pathway-analyse
