@@ -20,7 +20,7 @@ De analyse werd uitgevoerd volgens de volgende workflow:
 
 Count matrix + metadata -> Differentiële genexpressieanalyse (DESeq2) -> Selectie significante genen -> GO-verrijkingsanalyse (goseq) -> KEGG pathway-analyse (clusterProfiler) -> Visualisatie IL-17 pathway (pathview)
 
-Differentiële genexpressie werd bepaald met DESeq2 ([Love 2014 DESeq2](Referenties/Love_2014_DESeq2.pdf)). Genen werden als significant beschouwd bij een adjusted p-waarde < 0,05. De resultaten zijn opgeslagen in [DESeq2 resultaten](Resultaten/02_DESeq2_results.csv) en [Significante genen](Resultaten/04_significante_genen.csv).
+Differentiële genexpressie werd bepaald met DESeq2 ([Love 2014 DESeq2](Referenties/Love_2014_DESeq2.pdf)). Genen werden als significant beschouwd bij een adjusted p-waarde < 0,01. De resultaten zijn opgeslagen in [DESeq2 resultaten](Resultaten/02_DESeq2_results.csv) en [Significante genen](Resultaten/04_significante_genen.csv).
 
 De lijst met significante genen werd vervolgens gebruikt voor een GO-verrijkingsanalyse met goseq ([Young 2010 GOseq](Referenties/Young_2010_GOseq.pdf)). De resultaten zijn beschikbaar in [GO resultaten](Resultaten/06_GO_results.csv).
 
