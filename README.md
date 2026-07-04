@@ -34,7 +34,7 @@ De analyse werd uitgevoerd in R met behulp van Rsubread (v2.26.0), Rsamtools (v2
 
 **Differentiële genexpressie**
 
-Om genen te identificeren die verschillen tussen RA-patiënten en gezonde controles werd een differentiële genexpressieanalyse uitgevoerd. In totaal werden 4572 significante genen geïdentificeerd (adjusted p < 0,05), waarvan 2085 opgereguleerd en 2487 neergereguleerd waren. Een overzicht van deze resultaten is weergegeven in [Significante genen](Resultaten/04_significante_genen.csv) en de [VulcanoplotRA](Resultaten/03_VolcanoplotRA.png).
+Om genen te identificeren die verschillen tussen RA-patiënten en gezonde controles werd een differentiële genexpressieanalyse uitgevoerd. In totaal werden 3083 significante genen geïdentificeerd (adjusted p < 0,01), waarvan 1297 opgereguleerd en 1786 neergereguleerd waren. Een overzicht van deze resultaten is weergegeven in [Significante genen](Resultaten/04_significante_genen.csv) en de [VulcanoplotRA](Resultaten/03_VolcanoplotRA.png).
 
 **GO-verrijkingsanalyse**
 
@@ -50,7 +50,7 @@ De KEGG-analyse identificeerde meerdere ontstekingsgerelateerde pathways. Binnen
 
 Dit onderzoek laat zien dat RA gepaard gaat met omvangrijke veranderingen in genexpressie binnen synoviaal weefsel. De differentiële genexpressieanalyse identificeerde een groot aantal genen die verschillen tussen RA-patiënten en gezonde controles.
 
-De GO-verrijkingsanalyse toont aan dat vooral processen gerelateerd aan immuunactivatie en adaptieve afweer zijn verrijkt. Daarnaast identificeerde de KEGG-analyse meerdere ontstekingsgerelateerde pathways, waaronder de IL-17-signaleringsroute. De opregulatie van CXCL1, CXCL2, CXCL5, CXCL8 en CCL7 suggereert dat IL-17-gemedieerde recrutering van immuuncellen kan bijdragen aan het in stand houden van chronische ontsteking.
+In totaal werden 13 significant verrijkte GO-termen geïdentificeerd. Deze termen hadden voornamelijk betrekking op immuunrespons, cytokinesignalering, ontstekingsprocessen en regulatie van leukocytenactiviteit. Deze bevindingen sluiten aan bij de bekende rol van het IL-17-signaalpad bij reumatoïde artritis zoals beschreven door [Lubberts (2015) IL17 RA](Referenties/Lubberts_2015_IL17_RA.pdf). De opregulatie van CXCL1, CXCL2, CXCL5, CXCL8 en CCL7 suggereert dat IL-17-gemedieerde recrutering van immuuncellen kan bijdragen aan het in stand houden van chronische ontsteking.
 
 Daarmee beantwoorden de resultaten de hoofdvraag: RA-patiënten onderscheiden zich van gezonde controles door veranderingen in genexpressie die voornamelijk samenhangen met immuun- en ontstekingsprocessen, waarbij de IL-17-signaleringsroute een belangrijke rol lijkt te spelen.
 
