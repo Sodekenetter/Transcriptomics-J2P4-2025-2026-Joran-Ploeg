@@ -9,3 +9,6 @@
 "GO:0002449",2.08660072726377e-11,1,100,322,"lymphocyte mediated immunity","BP",4.41670775939921e-07,6.3549013357833
 "GO:0002443",1.134652631618e-09,1,114,407,"leukocyte mediated immunity","BP",2.40171922534582e-05,4.61947776546366
 "GO:0002460",1.54102665028786e-09,1,105,358,"adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains","BP",3.26189111066431e-05,4.48653054079021
+"GO:0002252",9.53283344723237e-09,1,153,607,"immune effector process","BP",0.000201781485577568,3.69511868487995
+"GO:0001227",8.73967959139534e-08,1,81,296,"DNA-binding transcription repressor activity, RNA polymerase II-specific","MF",0.00184992797911065,2.73284517910168
+"GO:0001217",1.11046994309966e-07,1,83,306,"DNA-binding transcription repressor activity","MF",0.00235053172855904,2.62883388212937

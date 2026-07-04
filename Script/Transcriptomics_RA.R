@@ -128,39 +128,39 @@ head(hoogste_fold_change)
 head(laagste_fold_change)
 head(laagste_p_waarde)
 
-
-  #Vulcanoplot
+#Vulcanoplot
 EnhancedVolcano(resultatenRA, lab = rownames(resultatenRA), x = 'log2FoldChange', y = 'padj')
 dev.copy(png, '03_VolcanoplotRA.png', width = 8, height = 10, units = 'in', res = 500)
 dev.off()
 
-
-  #Go-analyse
+#Go-analyse
 keep <- rowSums(countsRA) > 0
 
 countsRA_filt <- countsRA[keep, ]
 resultatenRA_filt <- resultatenRA[keep, ]
 
-DE_genen <- resultatenRA[resultatenRA$padj < 0.05 & abs(resultatenRA$log2FoldChange) > 1,]
-DE_genen <- DE_genen %>%
+significante_genen <- resultatenRA[resultatenRA$padj < 0.05 & abs(resultatenRA$log2FoldChange) > 1,]
+significante_genen <- significante_genen %>%
   filter(!is.na(padj))
-head(DE_genen)
+head(significante_genen)
 
-DE_genen_up <- DE_genen[DE_genen$log2FoldChange > 0,]
-head(DE_genen_up)
+significante_genen_up <- significante_genen[significante_genen$log2FoldChange > 0,]
+head(significante_genen_up)
 
-DE_genen_down <- DE_genen[DE_genen$log2FoldChange < 0,]
-head(DE_genen_down)
+significante_genen_down <- significante_genen[significante_genen$log2FoldChange < 0,]
+head(significante_genen_down)
 
-write.csv(DE_genen, "04_significante_genen.csv", row.names = TRUE)
+write.csv(significante_genen, "04_significante_genen.csv", row.names = TRUE)
 
-significante_genen <- as.integer(!is.na(resultatenRA_filt$padj) &
-                                   !is.na(resultatenRA_filt$log2FoldChange) &
-                                   resultatenRA_filt$padj < 0.01 & abs(resultatenRA_filt$log2FoldChange) > 1)
+significante_genen_int <- as.integer(!is.na(resultatenRA_filt$padj) &
+                                       !is.na(resultatenRA_filt$log2FoldChange) &
+                                       resultatenRA_filt$padj < 0.01 & abs(resultatenRA_filt$log2FoldChange) > 1)
 
-names(significante_genen) <- rownames(resultatenRA_filt)
+head(significante_genen_int)
 
-pwf <- nullp(significante_genen, bias.data = rowSums(countsRA_filt), plot.fit = FALSE)
+names(significante_genen_int) <- rownames(resultatenRA_filt)
+
+pwf <- nullp(significante_genen_int, bias.data = rowSums(countsRA_filt), plot.fit = FALSE)
 
 GO.wall <- goseq(pwf, genome = "hg38", id = "geneSymbol")
 
@@ -169,30 +169,27 @@ GO.wall$padj_BF <- p.adjust(GO.wall$over_represented_pvalue, method = "bonferron
 significante_GO <- GO.wall[GO.wall$padj_BF <= 0.01 & GO.wall$numDEInCat >= 15 ,]
 
 significante_GO <- significante_GO[order(significante_GO$padj_BF),]
-head(significante_GO, 10)
+head(significante_GO)
 
-top10_GO <- head(significante_GO, 10)
-top10_GO$logFDR <- -log10(top10_GO$padj_BF)
+significante_GO$logFDR <- -log10(significante_GO$padj_BF)
 
-write.csv(top10_GO, "05_top10_GO.csv", row.names = FALSE)
-
-ggplot(top10_GO,aes(x = reorder(term, logFDR), y = logFDR, fill = ontology)) +
+ggplot(significante_GO,aes(x = reorder(term, logFDR), y = logFDR, fill = ontology)) +
   geom_col() +
   coord_flip() +
-  labs(title = "Top 10 verrijkte GO-termen", x = "", y = "-log10(FDR)", fill = "ontology") +
+  labs(title = "Verrijkte GO-termen", x = "", y = "-log10(FDR)", fill = "ontology") +
   theme_bw() +
   theme(axis.text.y = element_text(size = 9))
-dev.copy(png, '06_Top 10 verrijkte GO-termen.png', width = 20, height = 10, units = 'in', res = 1000)
+dev.copy(png, '05_Verrijkte_GO-termen.png', width = 20, height = 10, units = 'in', res = 1000)
 dev.off()
 
-write.csv(significante_GO, "07_GO_results.csv", row.names = FALSE)
+write.csv(significante_GO, "06_GO_results.csv", row.names = FALSE)
 GO_analyse_resultaat <- read.csv("07_GO_results.csv")
 head(GO_analyse_resultaat, 10)
 
   #Pathway-analyse
-significante_genen <- rownames(resultatenRA[resultatenRA$padj < 0.05 & abs(resultatenRA$log2FoldChange) > 1,])
+significante_genen_int <- rownames(resultatenRA[resultatenRA$padj < 0.05 & abs(resultatenRA$log2FoldChange) > 1,])
 
-entrez <- mapIds(org.Hs.eg.db, keys = significante_genen, column = "ENTREZID", keytype = "SYMBOL", multiVals = "first")
+entrez <- mapIds(org.Hs.eg.db, keys = significante_genen_int, column = "ENTREZID", keytype = "SYMBOL", multiVals = "first")
 
 entrez <- na.omit(entrez)
 head(entrez)
@@ -201,7 +198,7 @@ kegg <- enrichKEGG(gene = entrez, organism = "hsa", pvalueCutoff = 0.05)
 kegg_df <- (as.data.frame(kegg))
 head(kegg_df)
 
-write.csv(kegg_df, "08_KEGG_results.csv", row.names = FALSE)
+write.csv(kegg_df, "07_KEGG_results.csv", row.names = FALSE)
 
 fc <- resultatenRA$log2FoldChange
 names(fc) <- rownames(resultatenRA)
