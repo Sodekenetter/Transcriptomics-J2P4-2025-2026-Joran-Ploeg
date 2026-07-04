@@ -22,9 +22,9 @@ Count matrix + metadata -> Differentiële genexpressieanalyse (DESeq2) -> Select
 
 Differentiële genexpressie werd bepaald met DESeq2 ([Love 2014 DESeq2](Referenties/Love_2014_DESeq2.pdf)). Genen werden als significant beschouwd bij een adjusted p-waarde < 0,05. De resultaten zijn opgeslagen in [DESeq2 resultaten](Resultaten/02_DESeq2_results.csv) en [Significante genen](Resultaten/04_significante_genen.csv).
 
-De lijst met significante genen werd vervolgens gebruikt voor een GO-verrijkingsanalyse met goseq ([Young 2010 GOseq](Referenties/Young_2010_GOseq.pdf)). De resultaten zijn beschikbaar in [GO resultaten](Resultaten/07_GO_results.csv) en [Top 10 GO](Resultaten/05_top10_GO.csv).
+De lijst met significante genen werd vervolgens gebruikt voor een GO-verrijkingsanalyse met goseq ([Young 2010 GOseq](Referenties/Young_2010_GOseq.pdf)). De resultaten zijn beschikbaar in [GO resultaten](Resultaten/06_GO_results.csv).
 
-Daarnaast werd een KEGG pathway-analyse uitgevoerd met clusterProfiler. Verrijkte pathways werden opgeslagen in [KEGG resultaten](Resultaten/08_KEGG_results.csv). De IL-17-signaleringsroute (hsa04657) werd geselecteerd voor visualisatie met pathview ([Luo 2013 Pathview](Referenties/Luo_2013_Pathview.pdf)) en opgeslagen als [IL17 pathway](Resultaten/09_IL17_pathway.png).
+Daarnaast werd een KEGG pathway-analyse uitgevoerd met clusterProfiler. Verrijkte pathways werden opgeslagen in [KEGG resultaten](Resultaten/07_KEGG_results.csv). De IL-17-signaleringsroute (hsa04657) werd geselecteerd voor visualisatie met pathview ([Luo 2013 Pathview](Referenties/Luo_2013_Pathview.pdf)) en opgeslagen als [IL17 pathway](Resultaten/08_IL17_pathway.png).
 
 De analyse werd uitgevoerd in R met behulp van Rsubread (v2.26.0), Rsamtools (v2.28.0), DESeq2 (v1.52.0), goseq (v1.64.0), geneLenDataBase (v1.48.0), org.Hs.eg.db (v3.23.1), AnnotationDbi (v1.74.0), clusterProfiler (v4.20.0), KEGGREST (v1.52.0), pathview (v1.52.0), EnhancedVolcano (v1.30.0) en ggplot2 (v4.0.3). Het humane referentiegenoom GRCh38.p14 (NCBI Assembly GCF_000001405.40) werd gebruikt voor genannotatie.
 
@@ -38,11 +38,11 @@ Om genen te identificeren die verschillen tussen RA-patiënten en gezonde contro
 
 **GO-verrijkingsanalyse**
 
-Om betrokken biologische processen te identificeren werd een GO-verrijkingsanalyse uitgevoerd. De sterkst verrijkte termen betroffen onder andere adaptive immune response, immune response, B cell mediated immunity en immunoglobulin complex. Deze resultaten wijzen op een belangrijke rol van het adaptieve immuunsysteem bij RA. Een overzicht van de verrijkte termen is opgenomen in [Top 10 GO](Resultaten/05_top10_GO.csv) en [Top 10 verrijkte GO-termen](Resultaten/06_Top_10_verrijkte_GO-termen.png).
+Om betrokken biologische processen te identificeren werd een GO-verrijkingsanalyse uitgevoerd. De sterkst verrijkte termen betroffen onder andere adaptive immune response, immune response, B cell mediated immunity en immunoglobulin complex. Deze resultaten wijzen op een belangrijke rol van het adaptieve immuunsysteem bij RA. Een overzicht van de verrijkte termen is opgenomen in [GO resultaten](Resultaten/06_GO_results.csv) en [Top 10 verrijkte GO-termen](Resultaten/05_Top_10_verrijkte_GO-termen.png).
 
 **KEGG pathway-analyse**
 
-De KEGG-analyse identificeerde meerdere ontstekingsgerelateerde pathways. Binnen de geselecteerde IL-17-signaleringsroute waren de chemokines CXCL1, CXCL2, CXCL5, CXCL8 en CCL7 opgereguleerd. Deze genen spelen een rol bij de recrutering van immuuncellen naar ontstoken weefsels. De pathwayvisualisatie is weergegeven in [IL17 pathway](Resultaten/09_IL17_pathway.png).
+De KEGG-analyse identificeerde meerdere ontstekingsgerelateerde pathways. Binnen de geselecteerde IL-17-signaleringsroute waren de chemokines CXCL1, CXCL2, CXCL5, CXCL8 en CCL7 opgereguleerd. Deze genen spelen een rol bij de recrutering van immuuncellen naar ontstoken weefsels. De pathwayvisualisatie is weergegeven in [IL17 pathway](Resultaten/08_IL17_pathway.png).
 
 ---
 
