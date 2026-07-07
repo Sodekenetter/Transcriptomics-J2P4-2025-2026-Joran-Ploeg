@@ -102,7 +102,7 @@ head(countsRA, 8)
 
 write.csv(treatment_table, "01_metadata.csv", row.names = TRUE)
 
-  #Statestiek
+  #Statistiek
 dds <- DESeqDataSetFromMatrix(countData = countsRA, colData = treatment_table, design = ~ treatment)
 dds <- DESeq(dds)
 resultaten <- results(dds)
