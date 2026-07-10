@@ -17,7 +17,8 @@ Hoofdvraag: Welke genexpressieveranderingen en biologische processen onderscheid
 RNA-sequencinggegevens van synoviumbiopten van vier gezonde controles en vier RA-patiënten werden geanalyseerd. De gebruikte invoerbestanden zijn opgenomen als [Count matrix](Data/count_matrix_RA.txt) en [Metadata](Resultaten/01_metadata.csv).
 
 De analyse werd uitgevoerd volgens de volgende workflow:
-<img width="1100" height="500" alt="Transcriptomics stroomschema 3" src="https://github.com/user-attachments/assets/0aa06341-cbf8-4ba9-87c9-06c0d20f2750" />
+<img width="1101" height="500" alt="Transcriptomics stroomschema 4" src="https://github.com/user-attachments/assets/b1ef1bd1-2df3-4441-a165-db30d3c83fae" />
+
 
 
 Differentiële genexpressie werd bepaald met DESeq2 ([Love 2014 DESeq2](Referenties/Love_2014_DESeq2.pdf)). Genen werden als significant beschouwd bij een adjusted p-waarde < 0,01.
