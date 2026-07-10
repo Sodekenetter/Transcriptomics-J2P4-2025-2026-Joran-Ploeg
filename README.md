@@ -37,13 +37,16 @@ De volledige analyse is uitgevoerd met het script [RNAseq_analysis RA.R](Script/
 
 **Differentiële genexpressie**
 
-Om genen te identificeren die verschillen tussen RA-patiënten en gezonde controles werd een differentiële genexpressieanalyse uitgevoerd. In totaal werden 3083 significante genen geïdentificeerd (adjusted p < 0,01), waarvan 1297 opgereguleerd en 1786 neergereguleerd waren. Een overzicht van deze resultaten is weergegeven in [Significante genen](Resultaten/04_significante_genen.csv) en de hieronder weergegeven [Vulcanoplot](Resultaten/03_VolcanoplotRA.png) in figuur 2.
+Om genen te identificeren die verschillen tussen RA-patiënten en gezonde controles werd een differentiële genexpressieanalyse uitgevoerd. In totaal werden 3083 significante genen geïdentificeerd (adjusted p < 0,01), waarvan 1297 opgereguleerd en 1786 neergereguleerd waren. Een overzicht van deze resultaten is weergegeven in [Significante genen](Resultaten/04_significante_genen.csv) en de hieronder weergegeven [vulcanoplot](Resultaten/03_VolcanoplotRA.png) in figuur 2.
 <img width="4000" height="5000" alt="03_VolcanoplotRA" src="https://github.com/user-attachments/assets/8a5b7caf-ead7-4827-8425-f16191d2867a" />
 Figuur 2: 
 
 **GO-verrijkingsanalyse**
 
-Om betrokken biologische processen te identificeren werd een GO-verrijkingsanalyse uitgevoerd. De sterkst verrijkte termen betroffen onder andere adaptive immune response, immune response, B cell mediated immunity en immunoglobulin complex. Deze resultaten wijzen op een belangrijke rol van het adaptieve immuunsysteem bij RA. Een overzicht van de verrijkte termen is opgenomen in [GO resultaten](Resultaten/06_GO_results.csv) en [Verrijkte GO-termen](Resultaten/05_Verrijkte_GO-termen.png).
+Om betrokken biologische processen te identificeren werd een GO-verrijkingsanalyse uitgevoerd. De sterkst verrijkte termen betroffen onder andere adaptive immune response, immune response, B cell mediated immunity en immunoglobulin complex. Deze resultaten wijzen op een belangrijke rol van het adaptieve immuunsysteem bij RA. Een overzicht van de verrijkte termen is opgenomen in [GO resultaten](Resultaten/06_GO_results.csv) en de hieronder weergegeven [verrijkte GO-termen](Resultaten/05_Verrijkte_GO-termen.png) in figuur 3.
+<img width="20000" height="10000" alt="05_Verrijkte_GO-termen" src="https://github.com/user-attachments/assets/084ff8fd-5f50-489c-9ba9-302ef6e5c64b" />
+Figuur 3: 
+
 
 **KEGG pathway-analyse**
 
