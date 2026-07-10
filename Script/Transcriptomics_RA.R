@@ -5,42 +5,13 @@ getwd()
 
   #Packages
 #install.packages('BiocManager')
-#BiocManager::install('Rsubread')
-#BiocManager::install("DESeq2")
-#BiocManager::install("EnhancedVolcano")
-#BiocManager::install("pathview")
-#BiocManager::install("goseq")
-#BiocManager::install("geneLenDataBase")
-#BiocManager::install("org.Hs.eg.db")
-#BiocManager::install("clusterProfiler")
-#BiocManager::install("AnnotationDbi")
-#install.packages("ggplot2")
-library(Rsubread)
-library(DESeq2)
-library(EnhancedVolcano)
-library(pathview)
-library(goseq)
-library(geneLenDataBase)
-library(org.Hs.eg.db)
-library(AnnotationDbi)
-library(clusterProfiler)
-library(ggplot2)
-
-packageVersion("Rsubread")
-packageVersion("Rsamtools")
-packageVersion("DESeq2")
-packageVersion("KEGGREST")
-packageVersion("EnhancedVolcano")
-packageVersion("pathview")
-packageVersion("goseq")
-packageVersion("geneLenDataBase")
-packageVersion("org.Hs.eg.db")
-packageVersion("clusterProfiler")
-packageVersion("AnnotationDbi")
-packageVersion("ggplot2")
 
 
   #Indexeren
+#BiocManager::install('Rsubread')
+library(Rsubread)
+packageVersion("Rsubread")
+
 #buildindex(
 #  basename = 'ref_human',
 #  reference = 'GCF_000001405.40_GRCh38.p14_genomic.fna',
@@ -102,7 +73,12 @@ head(countsRA, 8)
 
 write.csv(treatment_table, "01_metadata.csv", row.names = TRUE)
 
+
   #Statistiek
+#BiocManager::install("DESeq2")
+library(DESeq2)
+packageVersion("DESeq2")
+
 dds <- DESeqDataSetFromMatrix(countData = countsRA, colData = treatment_table, design = ~ treatment)
 dds <- DESeq(dds)
 resultaten <- results(dds)
@@ -124,12 +100,32 @@ head(hoogste_fold_change)
 head(laagste_fold_change)
 head(laagste_p_waarde)
 
-#Vulcanoplot
+
+  #Vulcanoplot
+#install.packages("ggplot2")
+#BiocManager::install("EnhancedVolcano")
+library(ggplot2)
+library(EnhancedVolcano)
+packageVersion("ggplot2")
+packageVersion("EnhancedVolcano")
+
+
 EnhancedVolcano(resultatenRA, lab = rownames(resultatenRA), x = 'log2FoldChange', y = 'padj')
 dev.copy(png, '03_VolcanoplotRA.png', width = 8, height = 10, units = 'in', res = 500)
 dev.off()
 
-#Go-analyse
+
+  #Go-analyse
+#BiocManager::install("geneLenDataBase")
+#BiocManager::install("goseq")
+#BiocManager::install("AnnotationDbi")
+library(geneLenDataBase)
+library(goseq)
+library(AnnotationDbi)
+packageVersion("geneLenDataBase")
+packageVersion("goseq")
+packageVersion("AnnotationDbi")
+
 keep <- rowSums(countsRA) > 0
 
 countsRA_filt <- countsRA[keep, ]
@@ -185,7 +181,18 @@ write.csv(significante_GO, "06_GO_results.csv", row.names = FALSE)
 GO_analyse_resultaat <- read.csv("06_GO_results.csv")
 head(GO_analyse_resultaat, 10)
 
-  #Pathway-analyse
+
+  #KEGG-analyse
+#BiocManager::install("clusterProfiler")
+#BiocManager::install("org.Hs.eg.db")
+#BiocManager::install("pathview")
+library(clusterProfiler)
+library(org.Hs.eg.db)
+library(pathview)
+packageVersion("clusterProfiler")
+packageVersion("org.Hs.eg.db")
+packageVersion("pathview")
+
 significante_genen_int <- rownames(resultatenRA[resultatenRA$padj < 0.05 & abs(resultatenRA$log2FoldChange) > 1,])
 
 entrez <- mapIds(org.Hs.eg.db, keys = significante_genen_int, column = "ENTREZID", keytype = "SYMBOL", multiVals = "first")
