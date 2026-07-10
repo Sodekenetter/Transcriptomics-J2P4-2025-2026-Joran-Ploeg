@@ -14,9 +14,7 @@ Hoofdvraag: Welke genexpressieveranderingen en biologische processen onderscheid
 
 ## ⚙️ Methode
 
-RNA-sequencinggegevens van synoviumbiopten van vier gezonde controles en vier RA-patiënten werden geanalyseerd. De gebruikte invoerbestanden zijn opgenomen als [Count matrix](Data/count_matrix_RA.txt) en [Metadata](Resultaten/01_metadata.csv).
-
-De analyse werd uitgevoerd volgens de workflow van figuur 1:
+RNA-sequencinggegevens van synoviumbiopten van vier gezonde controles en vier RA-patiënten werden geanalyseerd. De gebruikte invoerbestanden zijn opgenomen als [Count matrix](Data/count_matrix_RA.txt) en [Metadata](Resultaten/01_metadata.csv). De analyse werd uitgevoerd volgens de workflow van figuur 1.
 <img width="1101" height="500" alt="Transcriptomics stroomschema 7" src="https://github.com/user-attachments/assets/350a8356-77d2-48cd-8fd8-0104f304f239" />
 Figuur 1: Workflow van de transcriptomische analyse. De RNA-sequencingdata werden geïndexeerd en uitgelijnd met Rsubread, waarna een countmatrix werd opgesteld. Vervolgens werd differentiële genexpressie bepaald met DESeq2, gevolgd door GO-verrijkingsanalyse, KEGG pathway-analyse en visualisatie van de IL-17-signaleringsroute.
 
