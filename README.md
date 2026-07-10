@@ -23,7 +23,7 @@ Figuur 1:
 
 Differentiële genexpressie werd bepaald met DESeq2 (v1.52.0) ([Love 2014 DESeq2](Referenties/Love_2014_DESeq2.pdf)). Hiervan is een Vulcanoplot gemaakt met EnhancedVolcano (v1.30.0). Genen werden als significant beschouwd bij een adjusted p-waarde < 0,01.
 
-De lijst met significante genen werd vervolgens gebruikt voor een GO-verrijkingsanalyse met goseq (v1.64.0) ([Young 2010 GOseq](Referenties/Young_2010_GOseq.pdf)).Voor de GO- en KEGG-analyse werden genen met een adjusted p-waarde < 0,01 en |log2FC| > 1 als differentieel geëxpresseerd beschouwd.
+De lijst met significante genen werd vervolgens gebruikt voor een GO-verrijkingsanalyse met goseq (v1.64.0) ([Young 2010 GOseq](Referenties/Young_2010_GOseq.pdf)). Voor de GO- en KEGG-analyse werden genen met een adjusted p-waarde < 0,01 en |log2FC| > 1 als differentieel geëxpresseerd beschouwd.
 
 Daarnaast werd een KEGG pathway-analyse uitgevoerd met clusterProfiler (v4.20.0). De IL-17-signaleringsroute (hsa04657) werd geselecteerd voor visualisatie met pathview (v1.52.0) ([Luo 2013 Pathview](Referenties/Luo_2013_Pathview.pdf)).
 
