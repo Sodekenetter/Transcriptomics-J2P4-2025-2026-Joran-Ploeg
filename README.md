@@ -50,7 +50,9 @@ Figuur 3:
 
 **KEGG pathway-analyse**
 
-De KEGG-analyse identificeerde meerdere ontstekingsgerelateerde pathways. Binnen de geselecteerde IL-17-signaleringsroute waren meerdere chemokines opgereguleerd, waaronder CXCL1, CXCL2, CXCL5, CXCL8 en CCL7. De opregulatie van CXCL1, CXCL2, CXCL5, CXCL8 en CCL7 wijst erop dat vooral het chemokine-gemedieerde deel van de IL-17-signaleringsroute actief is binnen deze dataset. De pathwayvisualisatie is weergegeven in [IL17 pathway](Resultaten/08_IL17_pathway.png).
+De KEGG-analyse identificeerde meerdere ontstekingsgerelateerde pathways. Binnen de geselecteerde IL-17-signaleringsroute waren meerdere chemokines opgereguleerd, waaronder CXCL1, CXCL2, CXCL5, CXCL8 en CCL7. De opregulatie van CXCL1, CXCL2, CXCL5, CXCL8 en CCL7 wijst erop dat vooral het chemokine-gemedieerde deel van de IL-17-signaleringsroute actief is binnen deze dataset. De [pathwayvisualisatie](Resultaten/08_IL17_pathway.png) is hieronder weergegeven in figuur 4.
+<img width="1556" height="1065" alt="08_IL17_pathway" src="https://github.com/user-attachments/assets/fa355160-83e4-42d4-9d86-9f730715dfdf" />
+Figuur 4:
 
 ---
 
