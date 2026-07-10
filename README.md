@@ -17,17 +17,17 @@ Hoofdvraag: Welke genexpressieveranderingen en biologische processen onderscheid
 RNA-sequencinggegevens van synoviumbiopten van vier gezonde controles en vier RA-patiënten werden geanalyseerd. De gebruikte invoerbestanden zijn opgenomen als [Count matrix](Data/count_matrix_RA.txt) en [Metadata](Resultaten/01_metadata.csv).
 
 De analyse werd uitgevoerd volgens de workflow van figuur 1:
-<img width="1101" height="500" alt="Transcriptomics stroomschema 5" src="https://github.com/user-attachments/assets/1a674038-1c5e-4139-b057-c7dd53abf86a" />
+<img width="1101" height="500" alt="Transcriptomics stroomschema 6" src="https://github.com/user-attachments/assets/62977ed2-5418-46a3-b8b8-171c1011a227" />
 Figuur 1: 
 
 
-Differentiële genexpressie werd bepaald met DESeq2 (v1.52.0) ([Love 2014 DESeq2](Referenties/Love_2014_DESeq2.pdf)). Genen werden als significant beschouwd bij een adjusted p-waarde < 0,01.
+Differentiële genexpressie werd bepaald met DESeq2 (v1.52.0) ([Love 2014 DESeq2](Referenties/Love_2014_DESeq2.pdf)). Hiervan is een Vulcanoplot gemaakt met EnhancedVolcano (v1.30.0). Genen werden als significant beschouwd bij een adjusted p-waarde < 0,01.
 
 De lijst met significante genen werd vervolgens gebruikt voor een GO-verrijkingsanalyse met goseq (v1.64.0) ([Young 2010 GOseq](Referenties/Young_2010_GOseq.pdf)).Voor de GO- en KEGG-analyse werden genen met een adjusted p-waarde < 0,01 en |log2FC| > 1 als differentieel geëxpresseerd beschouwd.
 
-Daarnaast werd een KEGG pathway-analyse uitgevoerd met clusterProfiler (v4.20.0). De IL-17-signaleringsroute (hsa04657) werd geselecteerd voor visualisatie met pathview ([Luo 2013 Pathview](Referenties/Luo_2013_Pathview.pdf)).
+Daarnaast werd een KEGG pathway-analyse uitgevoerd met clusterProfiler (v4.20.0). De IL-17-signaleringsroute (hsa04657) werd geselecteerd voor visualisatie met pathview (v1.52.0) ([Luo 2013 Pathview](Referenties/Luo_2013_Pathview.pdf)).
 
-Naast de al eerder benoemde packages werd de analyse uitgevoerd in R met behulp van de volgende packages: Rsubread (v2.26.0), geneLenDataBase (v1.48.0), org.Hs.eg.db (v3.23.1), AnnotationDbi (v1.74.0), pathview (v1.52.0), EnhancedVolcano (v1.30.0) en ggplot2 (v4.0.3). Voor indexering en alignering van de RNA-sequencingdata werd het humane referentiegenoom GRCh38.p14 (NCBI Assembly GCF_000001405.40) gebruikt.
+Naast de al eerder benoemde packages werd de analyse uitgevoerd in R met behulp van de volgende packages: Rsubread (v2.26.0), geneLenDataBase (v1.48.0), org.Hs.eg.db (v3.23.1), AnnotationDbi (v1.74.0) en ggplot2 (v4.0.3). Voor indexering en alignering van de RNA-sequencingdata werd het humane referentiegenoom GRCh38.p14 (NCBI Assembly GCF_000001405.40) gebruikt.
 
 De volledige analyse is uitgevoerd met het script [RNAseq_analysis RA.R](Script/Transcriptomics_RA.R).
 
