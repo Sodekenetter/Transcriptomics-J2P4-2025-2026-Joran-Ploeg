@@ -18,7 +18,7 @@ RNA-sequencinggegevens van synoviumbiopten van vier gezonde controles en vier RA
 
 De analyse werd uitgevoerd volgens de volgende workflow:
 
-Count matrix + metadata -> Differentiële genexpressieanalyse (DESeq2) -> Selectie significante genen -> GO-verrijkingsanalyse (goseq) -> KEGG pathway-analyse (clusterProfiler) -> Visualisatie IL-17 pathway (pathview)
+<img width="1100" height="500" alt="Transcriptomics stroomschema 2" src="https://github.com/user-attachments/assets/f4a49349-0c39-449b-999c-4a5ca0f792df" />
 
 Differentiële genexpressie werd bepaald met DESeq2 ([Love 2014 DESeq2](Referenties/Love_2014_DESeq2.pdf)). Genen werden als significant beschouwd bij een adjusted p-waarde < 0,01. De resultaten zijn opgeslagen in [DESeq2 resultaten](Resultaten/02_DESeq2_results.csv) en [Significante genen](Resultaten/04_significante_genen.csv).
 
