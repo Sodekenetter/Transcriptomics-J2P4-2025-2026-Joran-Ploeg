@@ -16,9 +16,9 @@ Hoofdvraag: Welke genexpressieveranderingen en biologische processen onderscheid
 
 RNA-sequencinggegevens van synoviumbiopten van vier gezonde controles en vier RA-patiënten werden geanalyseerd. De gebruikte invoerbestanden zijn opgenomen als [Count matrix](Data/count_matrix_RA.txt) en [Metadata](Resultaten/01_metadata.csv).
 
-De analyse werd uitgevoerd volgens de volgende workflow:
+De analyse werd uitgevoerd volgens de workflow van figuur 1:
 <img width="1101" height="500" alt="Transcriptomics stroomschema 4" src="https://github.com/user-attachments/assets/b1ef1bd1-2df3-4441-a165-db30d3c83fae" />
-
+Figuur 1: 
 
 
 Differentiële genexpressie werd bepaald met DESeq2 ([Love 2014 DESeq2](Referenties/Love_2014_DESeq2.pdf)). Genen werden als significant beschouwd bij een adjusted p-waarde < 0,01.
@@ -37,9 +37,9 @@ De volledige analyse is uitgevoerd met het script [RNAseq_analysis RA.R](Script/
 
 **Differentiële genexpressie**
 
-Om genen te identificeren die verschillen tussen RA-patiënten en gezonde controles werd een differentiële genexpressieanalyse uitgevoerd. In totaal werden 3083 significante genen geïdentificeerd (adjusted p < 0,01), waarvan 1297 opgereguleerd en 1786 neergereguleerd waren. Een overzicht van deze resultaten is weergegeven in [Significante genen](Resultaten/04_significante_genen.csv) en de [VulcanoplotRA](Resultaten/03_VolcanoplotRA.png).
-
-
+Om genen te identificeren die verschillen tussen RA-patiënten en gezonde controles werd een differentiële genexpressieanalyse uitgevoerd. In totaal werden 3083 significante genen geïdentificeerd (adjusted p < 0,01), waarvan 1297 opgereguleerd en 1786 neergereguleerd waren. Een overzicht van deze resultaten is weergegeven in [Significante genen](Resultaten/04_significante_genen.csv) en de hieronder weergegeven [Vulcanoplot](Resultaten/03_VolcanoplotRA.png) in figuur 2.
+<img width="4000" height="5000" alt="03_VolcanoplotRA" src="https://github.com/user-attachments/assets/8a5b7caf-ead7-4827-8425-f16191d2867a" />
+Figuur 2: 
 
 **GO-verrijkingsanalyse**
 
