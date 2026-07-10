@@ -16,17 +16,12 @@ Hoofdvraag: Welke genexpressieveranderingen en biologische processen onderscheid
 
 RNA-sequencinggegevens van synoviumbiopten van vier gezonde controles en vier RA-patiënten werden geanalyseerd. De gebruikte invoerbestanden zijn opgenomen als [Count matrix](Data/count_matrix_RA.txt) en [Metadata](Resultaten/01_metadata.csv).
 
-De analyse werd uitgevoerd volgens de volgende workflow:
+De analyse werd uitgevoerd volgens de workflow van figuur 1:
+<img width="1101" height="500" alt="Transcriptomics stroomschema 7" src="https://github.com/user-attachments/assets/350a8356-77d2-48cd-8fd8-0104f304f239" />
+Figuur 1: 
 
-Count matrix + metadata -> Differentiële genexpressieanalyse (DESeq2) -> Selectie significante genen -> GO-verrijkingsanalyse (goseq) -> KEGG pathway-analyse (clusterProfiler) -> Visualisatie IL-17 pathway (pathview)
 
-Differentiële genexpressie werd bepaald met DESeq2 ([Love 2014 DESeq2](Referenties/Love_2014_DESeq2.pdf)). Genen werden als significant beschouwd bij een adjusted p-waarde < 0,01. De resultaten zijn opgeslagen in [DESeq2 resultaten](Resultaten/02_DESeq2_results.csv) en [Significante genen](Resultaten/04_significante_genen.csv).
-
-De lijst met significante genen werd vervolgens gebruikt voor een GO-verrijkingsanalyse met goseq ([Young 2010 GOseq](Referenties/Young_2010_GOseq.pdf)).Voor de GO- en KEGG-analyse werden genen met een adjusted p-waarde < 0,01 en |log2FC| > 1 als differentieel geëxpresseerd beschouwd. De resultaten zijn beschikbaar in [GO resultaten](Resultaten/06_GO_results.csv).
-
-Daarnaast werd een KEGG pathway-analyse uitgevoerd met clusterProfiler. Verrijkte pathways werden opgeslagen in [KEGG resultaten](Resultaten/07_KEGG_results.csv). De IL-17-signaleringsroute (hsa04657) werd geselecteerd voor visualisatie met pathview ([Luo 2013 Pathview](Referenties/Luo_2013_Pathview.pdf)) en opgeslagen als [IL17 pathway](Resultaten/08_IL17_pathway.png).
-
-De analyse werd uitgevoerd in R met behulp van Rsubread (v2.26.0), DESeq2 (v1.52.0), goseq (v1.64.0), geneLenDataBase (v1.48.0), org.Hs.eg.db (v3.23.1), AnnotationDbi (v1.74.0), clusterProfiler (v4.20.0), pathview (v1.52.0), EnhancedVolcano (v1.30.0) en ggplot2 (v4.0.3). Voor indexering en alignering van de RNA-sequencingdata werd het humane referentiegenoom GRCh38.p14 (NCBI Assembly GCF_000001405.40) gebruikt.
+Het indexeren en het aligneren van de RNA-sequencingdata werd uitgevoerd met Rsubread (v2.26.0) hiervoor werd het humane referentiegenoom GRCh38.p14 (NCBI Assembly GCF_000001405.40) gebruikt. Differentiële genexpressie werd bepaald met DESeq2 (v1.52.0) ([Love 2014 DESeq2](Referenties/Love_2014_DESeq2.pdf)). Hiervan is een Vulcanoplot gemaakt met EnhancedVolcano (v1.30.0) en ggplot2 (v4.0.3). Genen werden als significant beschouwd bij een adjusted p-waarde < 0,01. De lijst met significante genen werd vervolgens gebruikt voor een GO-verrijkingsanalyse met goseq (v1.64.0), geneLenDataBase (v1.48.0) en AnnotationDbi (v1.74.0) ([Young 2010 GOseq](Referenties/Young_2010_GOseq.pdf)). Daarnaast werd een KEGG pathway-analyse uitgevoerd met clusterProfiler (v4.20.0) en org.Hs.eg.db (v3.23.1). Voor de GO- en KEGG-analyse werden genen met een adjusted p-waarde < 0,01 en |log2FC| > 1 als differentieel geëxpresseerd beschouwd. De IL-17-signaleringsroute (hsa04657) werd geselecteerd voor visualisatie met pathview (v1.52.0) ([Luo 2013 Pathview](Referenties/Luo_2013_Pathview.pdf)).
 
 De volledige analyse is uitgevoerd met het script [RNAseq_analysis RA.R](Script/Transcriptomics_RA.R).
 
@@ -36,15 +31,22 @@ De volledige analyse is uitgevoerd met het script [RNAseq_analysis RA.R](Script/
 
 **Differentiële genexpressie**
 
-Om genen te identificeren die verschillen tussen RA-patiënten en gezonde controles werd een differentiële genexpressieanalyse uitgevoerd. In totaal werden 3083 significante genen geïdentificeerd (adjusted p < 0,01), waarvan 1297 opgereguleerd en 1786 neergereguleerd waren. Een overzicht van deze resultaten is weergegeven in [Significante genen](Resultaten/04_significante_genen.csv) en de [VulcanoplotRA](Resultaten/03_VolcanoplotRA.png).
+Om genen te identificeren die verschillen tussen RA-patiënten en gezonde controles werd een differentiële genexpressieanalyse uitgevoerd. In totaal werden 3083 significante genen geïdentificeerd (adjusted p < 0,01), waarvan 1297 opgereguleerd en 1786 neergereguleerd waren. Een overzicht van deze resultaten is weergegeven in [Significante genen](Resultaten/04_significante_genen.csv) en de hieronder weergegeven [vulcanoplot](Resultaten/03_VolcanoplotRA.png) in figuur 2.
+<img width="4000" height="5000" alt="03_VolcanoplotRA" src="https://github.com/user-attachments/assets/8a5b7caf-ead7-4827-8425-f16191d2867a" />
+Figuur 2: 
 
 **GO-verrijkingsanalyse**
 
-Om betrokken biologische processen te identificeren werd een GO-verrijkingsanalyse uitgevoerd. De sterkst verrijkte termen betroffen onder andere adaptive immune response, immune response, B cell mediated immunity en immunoglobulin complex. Deze resultaten wijzen op een belangrijke rol van het adaptieve immuunsysteem bij RA. Een overzicht van de verrijkte termen is opgenomen in [GO resultaten](Resultaten/06_GO_results.csv) en [Verrijkte GO-termen](Resultaten/05_Verrijkte_GO-termen.png).
+Om betrokken biologische processen te identificeren werd een GO-verrijkingsanalyse uitgevoerd. De sterkst verrijkte termen betroffen onder andere adaptive immune response, immune response, B cell mediated immunity en immunoglobulin complex. Deze resultaten wijzen op een belangrijke rol van het adaptieve immuunsysteem bij RA. Een overzicht van de verrijkte termen is opgenomen in [GO resultaten](Resultaten/06_GO_results.csv) en de hieronder weergegeven [verrijkte GO-termen](Resultaten/05_Verrijkte_GO-termen.png) in figuur 3.
+<img width="20000" height="10000" alt="05_Verrijkte_GO-termen" src="https://github.com/user-attachments/assets/084ff8fd-5f50-489c-9ba9-302ef6e5c64b" />
+Figuur 3: 
+
 
 **KEGG pathway-analyse**
 
-De KEGG-analyse identificeerde meerdere ontstekingsgerelateerde pathways. Binnen de geselecteerde IL-17-signaleringsroute waren meerdere chemokines opgereguleerd, waaronder CXCL1, CXCL2, CXCL5, CXCL8 en CCL7. De opregulatie van CXCL1, CXCL2, CXCL5, CXCL8 en CCL7 wijst erop dat vooral het chemokine-gemedieerde deel van de IL-17-signaleringsroute actief is binnen deze dataset. De pathwayvisualisatie is weergegeven in [IL17 pathway](Resultaten/08_IL17_pathway.png).
+De KEGG-analyse identificeerde meerdere ontstekingsgerelateerde pathways. Binnen de geselecteerde IL-17-signaleringsroute waren meerdere chemokines opgereguleerd, waaronder CXCL1, CXCL2, CXCL5, CXCL8 en CCL7. De opregulatie van CXCL1, CXCL2, CXCL5, CXCL8 en CCL7 wijst erop dat vooral het chemokine-gemedieerde deel van de IL-17-signaleringsroute actief is binnen deze dataset. De [pathwayvisualisatie](Resultaten/08_IL17_pathway.png) is hieronder weergegeven in figuur 4.
+<img width="1556" height="1065" alt="08_IL17_pathway" src="https://github.com/user-attachments/assets/fa355160-83e4-42d4-9d86-9f730715dfdf" />
+Figuur 4:
 
 ---
 
