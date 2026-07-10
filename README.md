@@ -28,7 +28,7 @@ De volledige analyse is uitgevoerd met het script [RNAseq_analysis RA.R](Script/
 
 **Differentiële genexpressie**
 
-Om genen te identificeren die verschillen tussen RA-patiënten en gezonde controles werd een differentiële genexpressieanalyse uitgevoerd. In totaal werden 3083 significante genen geïdentificeerd (adjusted p < 0,01), waarvan 1297 opgereguleerd en 1786 neergereguleerd waren. Een overzicht van deze resultaten is weergegeven in [Significante genen](Resultaten/04_significante_genen.csv) en de hieronder weergegeven [vulcanoplot](Resultaten/03_VolcanoplotRA.png) in figuur 2.
+Om genen te identificeren die verschillen tussen RA-patiënten en gezonde controles werd een differentiële genexpressieanalyse uitgevoerd. In totaal werden 3083 significante genen geïdentificeerd (adjusted p < 0,01), waarvan 1297 opgereguleerd en 1786 neergereguleerd waren. Een overzicht van deze resultaten is weergegeven in [Significante genen](Resultaten/04_significante_genen.csv) en de hieronder weergegeven [Vulcano plot](Resultaten/03_VolcanoplotRA.png) in figuur 2.
 <img width="4000" height="5000" alt="03_VolcanoplotRA" src="https://github.com/user-attachments/assets/8a5b7caf-ead7-4827-8425-f16191d2867a" />
 Figuur 2: Volcano plot van de differentiële genexpressie tussen reumatoïde artritis (RA)-patiënten (n = 4) en gezonde controles (n = 4). Elk punt vertegenwoordigt één gen. De x-as toont de log2 fold change en de y-as de –log10(adjusted p-waarde). Genen met een adjusted p-waarde < 0,01 worden als significant beschouwd.
 
